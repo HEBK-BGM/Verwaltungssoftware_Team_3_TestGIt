@@ -46,31 +46,31 @@ class Person{
 
 
 
-class Fach{
+class Spiel{
  -name : String
- +Fach(pName : String)
- +gebeAlleNotenAus() : String
- +noteHinzufuegen(pNote : Note) : void
+ +spiel(pName : String)
+ +gebeAlleErrungenschaften aus() : String
+ +spielzeithinzufügen(pSpielzeit : int) : void
  +getName(): String
  +setName(pName : String) : void
  +toString() : String
 }
 
-class Note{
- -note: int
+class Errungenschaft{
+ +name : String
  -jahr : int
- +Note(pNote : int, pJahr : int)
- +getNote(): String
- +setNote(pNote : int) : void
+ +Errungenschaft( pJahr : int ,pName : String)
+ +getErrungenschaft(): String
+ setName(): String
  +getJahr(): String
- +setJahr(pNote : int) : void
+ +setJahr(pErrungenschaft : int) : void
  +toString() String
 }
 
 
 
 
-class Schueler{
+class Spieler{
   -passwort : String
 
   +Schueler(pVorname : String, pNachname : String, pAlter : int, pPassword : String)
