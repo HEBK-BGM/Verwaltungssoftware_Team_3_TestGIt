@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-class Schuelerverwaltung{
+class Benutzerverwaltung{
  -benutzer : Benutzer
  -überprüfeanmeldung ()
  + Schuelerverwaltung ()
@@ -25,10 +25,10 @@ class MenueFuehrung{
  + zeigeSpiele(pBenutzer : Schueler) : void
  + spielAnlegen() : Fach
  - start() : int
- + speieleigenschaftenAnlegen(pSchueler : Schueler) : void
+ + speieleigenschaftenAnlegen(pBenutzer : Benutzer) : void
  + spieleigenschaftenAbfragen() : String
- + zeigeMenue(pSchuelerverwaltung : Schuelerverwaltung) : void
- - breakLine() : void
+ + zeigeMenue(pBenutzerverwaltung : pBenutzerverwaltung) : void
+ 
  }
 
 class Person{
@@ -85,12 +85,21 @@ class Datenleser{
   +leseDatenein() : void 
   -leseBewertungenEin : int
   -leseBenutzerDatenEin : String
-  -leseErrungenschaftein : String
+  -leseErrungenschaftein : Errungenschaft
   -leseSpieleein() : Spiel
   }
 
+class Bewertung{
+  +Bewertungspunkte:int
+  +pBewertungstext:String
+  +setBewertung(pBewertungstext:String,pBewertungspunkte:int)
+  +löscheBewertung(pBewertng:Bewertung)
+
+}
+
 
 Spiel "1" *-- "0..10" Errungenschaft
+Spiel "1" *-- "0..10" Bewertung
 Schuelerverwaltung  *-- "1" MenueFuehrung
 Benutzer "1" *-- "0..10" Spiel
 Person <|-- Benutzer
