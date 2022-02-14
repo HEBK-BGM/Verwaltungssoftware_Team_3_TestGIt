@@ -2,8 +2,8 @@
 skinparam classAttributeIconSize 0
 
 class Schuelerverwaltung{
- -schueler : Schueler
- -angemeldet : boolean
+ -benutzer : Benutzer
+ -überprüfeanmeldung ()
  + Schuelerverwaltung ()
  + anmeldung() : void
  - anmeldung(pPassword : String) : void
@@ -19,14 +19,14 @@ class MenueFuehrung{
  - sc : Scanner(System.in)
 
  +MenueFuehrung()
- +erstelleUser() : Schueler
+ +registriere() : Benutzer
  + anmeldung() : String
  + abmeldung() : void
- + zeigeFaecher(pSchueler : Schueler) : void
- + fachAnlegen() : Fach
+ + zeigeSpiele(pBenutzer : Schueler) : void
+ + spielAnlegen() : Fach
  - start() : int
- + noteAnlegen(pSchueler : Schueler) : void
- + noteAbfragen() : pNote
+ + speieleigenschaftenAnlegen(pSchueler : Schueler) : void
+ + spieleigenschaftenAbfragen() : String
  + zeigeMenue(pSchuelerverwaltung : Schuelerverwaltung) : void
  - breakLine() : void
  }
@@ -63,32 +63,36 @@ class Errungenschaft{
  +getErrungenschaft(): String
  setName(): String
  +getJahr(): String
- +setJahr(pErrungenschaft : int) : void
+ +setJahr(pErrungenschaft : WWrrungenschaft) : void
  +toString() String
 }
 
 
 
 
-class Spieler{
+class Benutzer{
   -passwort : String
-
-  +Schueler(pVorname : String, pNachname : String, pAlter : int, pPassword : String)
-  
-  +changePassword(pPassword : String) : void
-  +ueberpruefePassword(pPassword : String): boolean
-  +gebeNotenAus() : void
-  + fachAnlegen(pFach : Fach) : void
-  +alleFaecherAusgeben() : void
-  +alleFachNamenMitNummernAusgeben() : void
-  +noteFuerFachAnlegen(pFachID : int, pNote : Note) : void
+  +änderePassword(pPassword : String) : void
+  +ueberpruefeAnmeldedaten(pPassword : String, pName : String): boolean
+  + SpieleAnlegen(pSpiel : Spiel) : void
+  +alleSpieleAusgeben() : void
+  +BewertungenFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
+   +errungenschaftFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
   -setPassword(pPassword : String) : void
 }
 
+class Datenleser{
+  +leseDatenein() : void 
+  -leseBewertungenEin : int
+  -leseBenutzerDatenEin : String
+  -leseErrungenschaftein : String
+  -leseSpieleein() : Spiel
+  }
 
-Fach "1" *-- "0..10" Note
+
+Spiel "1" *-- "0..10" Errungenschaft
 Schuelerverwaltung  *-- "1" MenueFuehrung
-Schueler "1" *-- "0..10" Fach
-Person <|-- Schueler
+Benutzer "1" *-- "0..10" Spiel
+Person <|-- Benutzer
 
 @enduml
