@@ -13,15 +13,18 @@
 ## 1. Beschreibung der Anwendung
 
 ### **Grobbeschreibung** 
-Wir implementieren eine Notenverwaltng für Schüler. In dieser Anwendung sollen Nutzer ihre Fächer (inkl. unterschiedlicher Jahre) verwalten können. Dabei sollen neben der Noten auch der zugehörige Fachlehrer und das Jahr gespeichert werden. 
+Wir implementieren eine art von Steam Library. In dieser Anwendung sollen Nutzer ihre Spiele verwalten. Dabei sollen die Errungenschaften die Spielzeit und ihre Bewertung gespeichert werden. Die Steam Library soll zudem die Daten speichern somit sind die Daten später abgreifbar falls die Person die Anwendung schließt 
 
 ### **Menüführung**
-Die Menüfuhrung ist rein Textuell. Beim Start der Anwendung gibt es eine Passwortabfrage und danach kann der Nutzer wählen zwischen:
-- Fach anlegen
-- Note für Fach eintragen
-  - (erst Auswahl für ein Fach und Jahr, dann eintragen)
-- Note für Fach anzeigen
-- abmelden
+Die Menüfuhrung ausschließlich in der Konsole zu verwenden. Beim Start der Anwendung gibt es eine Passwortabfrage und danach kann der Nutzer wählen zwischen:
+- Spiel anlegen
+- Errungenschaft für Spiel eintragen
+- Bewertung für Spiel eintragen
+  - (erst Auswahl für ein Spiel und Kaufjahr, dann eintragen)
+- Bewertung für Spiel anzeigen
+- Errungenschaft für Spiel anzeigen
+- abmeldung
+- beendigung
 
 ## 2. Beschreibung des Funktionsablaufes
 
@@ -29,18 +32,19 @@ Die Menüfuhrung ist rein Textuell. Beim Start der Anwendung gibt es eine Passwo
 #### **Beschreibung Funktion Menü anzeigen**
 Nach der Anmeldung wählt der Benutzer die Option Fach danach wird er nach einen Namen, einem Jahr und einem Passwort gefragt. Diese gibt er über die Konsole ein.
 Anschließend erscheint ein Menü indem die Benutzer zwichen den Folgenden Punkte wählen können:
-- Fach anlegen
-- Note anlegen
-- Noten / Fach anzeigen
+- Spiel anlegen
+- Errungenschaft anlegen
+- Bewertung anlegen
+- Errungenschaften/Bewertungen / Spiel anzeigen
 - abmelden
 
 
 ### **Fach anlegen()**
 #### **Beschreibung Funktion Fach anlegen**
-Nach der Anmeldung kann der Benutzer den Menüpunkt "Fach anlegen" auswählen. In dieser Funktion wird er nach einem Fachnamen gefragt. Dieses Fach wird anschließend generiert und in das Array Faecher[] der Klasse Schueler gelegt.
+Nach der Anmeldung kann der Benutzer den Menüpunkt "Spiel anlegen" auswählen. In dieser Funktion wird er nach einem Fachnamen gefragt. Dieses Spiel wird anschließend generiert und in das Array Spiele[] der Klasse Benutzer gelegt.
 
 **Besonderheiten**
-Es können maximal 10 Fächer angelegt werden. Danach erfolgt eine Ausgabe: "Maximialanzahl der Fächer erreicht".
+Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maximiale anzahl an Spielen erreicht machen sie bitte Platz frei".
 
 
 #### **Diagramm (Aktivitätsdiagramm) Funktion Fach anlegen**
