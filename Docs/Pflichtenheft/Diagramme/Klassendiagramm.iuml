@@ -4,13 +4,13 @@ skinparam classAttributeIconSize 0
 class Benutzerverwaltung{
  -benutzer : Benutzer
  -überprüfeanmeldung ()
- + Schuelerverwaltung ()
+ + Benutzerverwaltung ()
  + anmeldung() : void
  - anmeldung(pPassword : String) : void
  + abmeldung() : void
  + zeigeMenue() : void
  + getAngemeldet() : boolean
- + getSchueler() : Schueler
+ + getBenutzer() : Benutzer
 }
 
 
@@ -22,8 +22,8 @@ class MenueFuehrung{
  +registriere() : Benutzer
  + anmeldung() : String
  + abmeldung() : void
- + zeigeSpiele(pBenutzer : Schueler) : void
- + spielAnlegen() : Fach
+ + zeigeSpiele(pBenutzer : Benutzer) : void
+ + spielAnlegen() : Spiel
  - start() : int
  + speieleigenschaftenAnlegen(pBenutzer : Benutzer) : void
  + spieleigenschaftenAbfragen() : String
@@ -47,12 +47,15 @@ class Person{
 
 
 class Spiel{
+ -kaufjahr : int 
  -name : String
  +spiel(pName : String)
  +gebeAlleErrungenschaften aus() : String
  +spielzeithinzufügen(pSpielzeit : int) : void
  +getName(): String
  +setName(pName : String) : void
+ +setKaufjahr:int
+ +getKaufjahr(pJahr:int)
  +toString() : String
 }
 
@@ -63,7 +66,7 @@ class Errungenschaft{
  +getErrungenschaft(): String
  setName(): String
  +getJahr(): String
- +setJahr(pErrungenschaft : WWrrungenschaft) : void
+ +setJahr(pErrungenschaft : Errungenschaft) : void
  +toString() String
 }
 
@@ -82,11 +85,13 @@ class Benutzer{
 }
 
 class Datenleser{
+  +erstelleDatei()
   +leseDatenein() : void 
   -leseBewertungenEin : int
   -leseBenutzerDatenEin : String
   -leseErrungenschaftein : Errungenschaft
   -leseSpieleein() : Spiel
+  +gebeBerwertungAus(): 
   }
 
 class Bewertung{
@@ -100,7 +105,7 @@ class Bewertung{
 
 Spiel "1" *-- "0..10" Errungenschaft
 Spiel "1" *-- "0..10" Bewertung
-Schuelerverwaltung  *-- "1" MenueFuehrung
+Benutzerverwaltung  *-- "1" MenueFuehrung
 Benutzer "1" *-- "0..10" Spiel
 Person <|-- Benutzer
 
