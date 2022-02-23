@@ -1,0 +1,18 @@
+@startuml
+
+object benutzer {
+vorname = "String"
+nachname = "String"
+alter = int
+passwort = "String"
+}
+
+
+object spiel {
+kaufjahr = int
+name = "String"
+
+}
+
+@enduml
+
