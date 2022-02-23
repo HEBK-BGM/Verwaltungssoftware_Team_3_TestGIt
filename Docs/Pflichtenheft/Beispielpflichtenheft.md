@@ -39,25 +39,25 @@ Anschließend erscheint ein Menü indem die Benutzer zwichen den Folgenden Punkt
 - abmelden
 
 
-### **Fach anlegen()**
+### **Spiel anlegen()**
 #### **Beschreibung Funktion Fach anlegen**
 Nach der Anmeldung kann der Benutzer den Menüpunkt "Spiel anlegen" auswählen. In dieser Funktion wird er nach einem Fachnamen gefragt. Dieses Spiel wird anschließend generiert und in das Array Spiele[] der Klasse Benutzer gelegt.
 
 **Besonderheiten**
-Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maximiale anzahl an Spielen erreicht machen sie bitte Platz frei".
+Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maximiale Anzahl an Spielen erreicht machen sie bitte Platz frei".
 
 
-#### **Diagramm (Aktivitätsdiagramm) Funktion Fach anlegen**
+#### **Diagramm (Aktivitätsdiagramm) Funktion Spiel anlegen**
 
 ![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/agileProjekt_2_Java/main/Docs/Pflichtenheft/Diagramme/AnwendungsFall_Fach_anlegen.iuml)
 
-### **Note anlegen()**
-TOFILL
+### **Errungenschaft anlegen()**
+Nach dem der User sich angemeldet hat, kann er im Menü entweder ein Spiel anlegen, wodurch er gebeten wird, einen Namen für sein Spiel anzulegen. Danach wird er gebeten eine Errungenschaft für dieses Spiel anzulegen. Errungenschaften können auch angelegt werden, indem der Spieler im Menü "Spiele bearbeiten" auswählt. Danach kann er auswählen welches Spiel er bearbeiten will und bei diesem wird es ihm dann möglich sein, den Namen und die Errungenschaft wieder zu bearbeiten.
 
-#### **Beschreibung METHODE**
-TOFILL
+#### **Beschreibung Registrieren**
+Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichkeiten: "Registrieren", "Anmelden" und "Beenden" gezeigt. Bei der Registrierung wird ein neuer Benutzer erstellt. Er wird gebeten sein Vornamen, seinen Nachnamen und ein Passwort einzugeben. Diese Daten werden vorläufig in einem Array gespeichert.
 
-#### **Diagramm METHODE**
+#### **Diagramm Registrieren**
 TOFILL
 
 
