@@ -60,6 +60,9 @@ Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichk
 #### **Diagramm Registrieren**
 !![grafik](https://user-images.githubusercontent.com/94616085/155309606-99315105-f350-4afa-9822-de926ff05927.png)
 
+### **Beschreibung Abmelden**
+Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswählt, so gelangt er wieder auf den Anfangs Screen wo er sich registrieren, abmelden oder das Programm beenden kann. Der Unterschied zum Beenden des Programms besteht darin, dass die Daten des Users weiterhin gespeichert bleiben.
+
 
 
 
