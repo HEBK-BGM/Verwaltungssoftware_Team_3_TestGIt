@@ -1,6 +1,7 @@
 public class Benutzerverwaltung {
-    private Menuefuehrung menuefuehrung;
+    private Benutzer benutzer;
+    private MenueFuehrung menuefuehrung;
     public Benutzerverwaltung (){
-        menuefuehrung = new Menuefuehrung();
+        menuefuehrung = new MenueFuehrung();
     }
 }
