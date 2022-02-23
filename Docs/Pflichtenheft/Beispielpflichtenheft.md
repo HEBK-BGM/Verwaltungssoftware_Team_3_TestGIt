@@ -50,6 +50,8 @@ Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maxi
 #### **Diagramm (Aktivitätsdiagramm) Funktion Spiel anlegen**
 
 ![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/agileProjekt_2_Java/main/Docs/Pflichtenheft/Diagramme/AnwendungsFall_Fach_anlegen.iuml)
+![grafik](https://user-images.githubusercontent.com/94616085/155313779-592ab361-39ec-42c8-bcb4-479e66a1a49a.png)
+
 
 ### **Errungenschaft anlegen()**
 Nach dem der User sich angemeldet hat, kann er im Menü entweder ein Spiel anlegen, wodurch er gebeten wird, einen Namen für sein Spiel anzulegen. Danach wird er gebeten eine Errungenschaft für dieses Spiel anzulegen. Errungenschaften können auch angelegt werden, indem der Spieler im Menü "Errungenschaft anlegen" auswählt. Danach wird er gefragt für welches Spiel diese Errungenschaft sein soll. Danach wird er gebeten etwas einzugeben und wird danach wieder zurück zum Menü gebracht.
@@ -58,7 +60,7 @@ Nach dem der User sich angemeldet hat, kann er im Menü entweder ein Spiel anleg
 Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichkeiten: "Registrieren", "Anmelden" und "Beenden" gezeigt. Bei der Registrierung wird ein neuer Benutzer erstellt. Er wird gebeten sein Vornamen, seinen Nachnamen und ein Passwort einzugeben. Diese Daten werden vorläufig in einem Array gespeichert.
 
 #### **Diagramm Registrieren**
-!![grafik](https://user-images.githubusercontent.com/94616085/155309606-99315105-f350-4afa-9822-de926ff05927.png)
+![grafik](https://user-images.githubusercontent.com/94616085/155309606-99315105-f350-4afa-9822-de926ff05927.png)
 
 ### **Beschreibung Abmelden**
 Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswählt, so gelangt er wieder auf den Anfangs Screen wo er sich registrieren, abmelden oder das Programm beenden kann. Der Unterschied zum Beenden des Programms besteht darin, dass die Daten des Users weiterhin gespeichert bleiben.
