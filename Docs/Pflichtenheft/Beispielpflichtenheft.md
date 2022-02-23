@@ -58,7 +58,7 @@ Nach dem der User sich angemeldet hat, kann er im Menü entweder ein Spiel anleg
 Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichkeiten: "Registrieren", "Anmelden" und "Beenden" gezeigt. Bei der Registrierung wird ein neuer Benutzer erstellt. Er wird gebeten sein Vornamen, seinen Nachnamen und ein Passwort einzugeben. Diese Daten werden vorläufig in einem Array gespeichert.
 
 #### **Diagramm Registrieren**
-TOFILL
+//www.plantuml.com/plantuml/png/SoWkIImgAStDuR8A1h6ikQo2KjCpYqkACbEBIlFIWNpNpBpqnAHKXR3yehp4t5Ga4R_4v0mqeO34ukBoVB0vZdbLgPdfgGg-gNc7zrXpEQJcfG3j0G00
 
 
 
