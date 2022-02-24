@@ -1,4 +1,5 @@
 @startuml
+start
 :Anmelden/ Registrieren;
 :Menü: Spiel anlegen;
 :Frage welches Spiel;
@@ -6,4 +7,5 @@
 :Frage welche Spielzeit;
 :Frage welches Kaufjahr;
 :Anzeige Menü;
+stop
 @enduml
