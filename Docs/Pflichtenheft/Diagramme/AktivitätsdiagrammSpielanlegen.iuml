@@ -1,0 +1,9 @@
+@startuml
+:Anmelden/ Registrieren;
+:Menü: Spiel anlegen;
+:Frage welches Spiel;
+:Frage welche Errungenschaft;
+:Frage welche Spielzeit;
+:Frage welches Kaufjahr;
+:Anzeige Menü;
+@enduml

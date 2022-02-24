@@ -1,0 +1,8 @@
+@startuml
+:Start;
+:Registrierung;
+:Eingabe Vorname;
+:Eingabe Nachname;
+:Eingabe Passwort;
+:Anzeige Menü;
+@enduml
