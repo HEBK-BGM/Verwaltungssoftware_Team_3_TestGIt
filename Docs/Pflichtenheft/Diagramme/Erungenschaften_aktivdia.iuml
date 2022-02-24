@@ -9,5 +9,6 @@ split again
    :Errungenschaft eingeben;
    :Welches Spiel ist diese Errungenschaft für?;
 end split
+:Errungenschaft zum Spiel hinzugefügt;
 
 @enduml
