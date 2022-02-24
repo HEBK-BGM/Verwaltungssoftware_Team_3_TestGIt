@@ -1,0 +1,17 @@
+@startuml
+:abmelden;
+split
+   :Anmelden;
+   kill
+split again
+   :regrisriren;
+   detach
+split again
+   :Programm Beenden;
+   end
+end split
+
+    
+
+
+@enduml
