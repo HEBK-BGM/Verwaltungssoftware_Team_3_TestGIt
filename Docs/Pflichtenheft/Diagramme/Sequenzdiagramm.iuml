@@ -1,0 +1,18 @@
+@startuml
+actor Benutzer
+participant Server
+Benutzer -> Server : Anfrage Regestrierung
+Server -> Benutzer : Gewährt Regestrierung
+Benutzer ->  Server : Regestriere 
+Server -> Server : Speichere Anmeldedaten
+Server -> Benutzer: Fordere Anmeldung an
+Benutzer -> Server : Meldet sich an 
+Server -> Server : Meldet Benutzer an
+Server -> Benutzer : Gewährt Zugriff auf Profil
+Benutzer -> Server : Erstellt Spiel 
+Server -> Server : Speichert Spiel
+Server -> Benutzer : Bestätigt Erstellung des Spiels
+Benutzer -> Server : Erstellt Achievment
+Server -> Server : Speichert Achievment
+Server -> Benutzer : Bestätigt Erstellung des Achievments
+@enduml
