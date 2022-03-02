@@ -60,11 +60,12 @@ class Spiel{
 }
 
 class Errungenschaft{
- +name : String
+ -name : String
  -jahr : int
  +Errungenschaft( pJahr : int ,pName : String)
  +getErrungenschaft(): String
  setName(): String
+ getName(): String 
  +getJahr(): String
  +setJahr(pErrungenschaft : Errungenschaft) : void
  +toString() String
@@ -77,10 +78,10 @@ class Benutzer{
   -passwort : String
   +änderePassword(pPassword : String) : void
   +ueberpruefeAnmeldedaten(pPassword : String, pName : String): boolean
-  + SpieleAnlegen(pSpiel : Spiel) : void
+  + spieleAnlegen(pSpiel : Spiel) : void
   +alleSpieleAusgeben() : void
-  +BewertungenFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
-   +errungenschaftFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
+  +bewertungenFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
+   +errungenschaftAnlegen(pSpieleID : int, pErrungenschaft : String) : void
   -setPassword(pPassword : String) : void
 }
 
@@ -98,7 +99,7 @@ class Bewertung{
   +Bewertungspunkte:int
   +pBewertungstext:String
   +setBewertung(pBewertungstext:String,pBewertungspunkte:int)
-  +löscheBewertung(pBewertng:Bewertung)
+  +löscheBewertung(pBewertngID:int)
 
 }
 
