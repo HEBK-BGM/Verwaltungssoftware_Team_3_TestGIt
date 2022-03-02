@@ -54,7 +54,9 @@ Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maxi
 #### **Diagramm (Aktivitätsdiagramm) Funktion Spiel anlegen**
 
 ![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/agileProjekt_2_Java/main/Docs/Pflichtenheft/Diagramme/AnwendungsFall_Fach_anlegen.iuml)
+
 ![grafik](https://user-images.githubusercontent.com/94616085/155313779-592ab361-39ec-42c8-bcb4-479e66a1a49a.png)
+
 
 
 ### **Errungenschaft anlegen()**
@@ -81,6 +83,9 @@ Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswä
 
 
 ### **Objektdiagramm**
+![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Objektdiagramme.iuml)
+
+
 TOFILL
 
 TODO Diagramme anpassen
