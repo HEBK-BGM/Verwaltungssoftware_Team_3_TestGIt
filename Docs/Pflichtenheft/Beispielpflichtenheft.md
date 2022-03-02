@@ -13,7 +13,9 @@
 ## 1. Beschreibung der Anwendung
 
 ### **Grobbeschreibung** 
-Wir implementieren eine art von Steam Library. In dieser Anwendung sollen Nutzer ihre Spiele verwalten. Dabei sollen die Errungenschaften die Spielzeit und ihre Bewertung gespeichert werden. Die Steam Library soll zudem die Daten speichern somit sind die Daten später abgreifbar falls die Person die Anwendung schließt 
+Wir implementieren eine art von Steam Library. In dieser Anwendung sollen Nutzer ihre Spiele verwalten. Dabei sollen die Errungenschaften die Spielzeit und ihre Bewertung gespeichert werden. Die Steam Library soll zudem die Daten speichern somit sind die Daten später abgreifbar falls die Person die Anwendung schließt.
+
+TODO Ausführlicher im Detail
 
 ### **Menüführung**
 Die Menüfuhrung ausschließlich in der Konsole zu verwenden. Beim Start der Anwendung gibt es eine Passwortabfrage und danach kann der Nutzer wählen zwischen:
@@ -38,6 +40,8 @@ Anschließend erscheint ein Menü indem die Benutzer zwichen den Folgenden Punkt
 - Errungenschaften/Bewertungen / Spiel anzeigen
 - abmelden
 
+
+TODO Falscher Text
 
 ### **Spiel anlegen()**
 #### **Beschreibung Funktion Spiel anlegen**
@@ -79,3 +83,4 @@ Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswä
 ### **Objektdiagramm**
 TOFILL
 
+TODO Diagramme anpassen
