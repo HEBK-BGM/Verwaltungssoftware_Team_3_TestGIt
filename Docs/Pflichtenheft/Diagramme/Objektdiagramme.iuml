@@ -1,4 +1,4 @@
-@startuml
+@startuml Objektdiagramm
 
 object zyklopus {
 vorname = "Jost"
