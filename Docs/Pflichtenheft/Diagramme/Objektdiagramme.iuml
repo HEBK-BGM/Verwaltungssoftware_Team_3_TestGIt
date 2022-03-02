@@ -1,18 +1,23 @@
 @startuml
 
-object benutzer {
-vorname = "String"
-nachname = "String"
-alter = int
-passwort = "String"
+object zyklopus {
+vorname = "Jost"
+nachname = "Trappmann"
+alter = 16
+passwort = "123456"
 }
 
 
-object spiel {
-kaufjahr = int
-name = "String"
-
+object minecraft {
+kaufjahr = 2016
+name = "Miencraft"
 }
 
+object weNeedToGoDeeper {
+name = "We need to go deeper"
+jahr = 2017
+}
+minecraft<|-- weNeedToGoDeeper
+zyklopus<|-- minecraft
 @enduml
 

@@ -1,0 +1,14 @@
+@startuml
+split
+   -[hidden]->
+   :Spiel anlegen;
+   :Errungenschaft eingeben;
+split again
+   -[hidden]->
+   :Errungenschaft anlegen;
+   :Errungenschaft eingeben;
+   :Welches Spiel ist diese Errungenschaft für?;
+end split
+:Errungenschaft zum Spiel hinzugefügt;
+
+@enduml
