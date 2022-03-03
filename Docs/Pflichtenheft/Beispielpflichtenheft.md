@@ -11,11 +11,17 @@
       2. (optional) PAP, Struktogramm
 
 ## 1. Beschreibung der Anwendung
+Unser Programm soll einer Steam Library ähneln. Benutzer müssen sich zuerst Registririeren dort fragt man den Benutzer nach
+seinem Namen und welches Passwort er haben will. Nach der Eingabe kann er sich entscheiden ob seine Daten gespeichert werden sollen oder nicht. Die Daten werden in einer JSON datei abgelegt die seinen Benutzernamen als 
+Dateinamen festlegt die JSON datei wird über die Klasse Datelleser bearbeitet. Durch das Anmelden kann er dann sein Namen eingeben,es wird dann gesucht nach einer Datei mit diesem Namen. Falls dieser Name nicht vorhanden ist dann wird darauf hingewiesen und man wird in den Startbildschirm zurück geführt. Im Mainmenü kann der Benutzer seine Spiele verwalten und hat stets die Option das Programm zu beenden. Die Spiele werden in einem Array[] gelegt das sich beim Benutzer befindet. Ein Spiel hat viele weitere Arrays[] und man kann seine Spielzeit eintragen. Errungenschaften ist eine davon sie braucht einen Integar der das Datum bestimmt und einen String der den Namen der Errungenschaft bestimmt. Bewertungen braucht genauso wie die Errungenschaften ein String und ein 
+Integar, die Besonderheit daran ist ,dass es ein Integar zwischen 1-5 sein muss falls die Zahl nicht passt weißt er den Nutzer daraufhin und fragt ihn erneut.
+Jede Eintragung kann abgebrochen und verändert werden dazu musst der Jeweilige Platz gewählt werden dies führt zu einem Optionmenü mit den Drei Optionen Löschen Verändern und Zurückkehren. Die JSon datei wird stets aktualisiert.
+Falls man sich nicht entscheiden kann, kann man unseren Zufallsgenerator verwenden der gibt dir die Optionen 
+eine reihe von Spielen auszuwählen oder die gesamte Bibliothek.Sie wählt dann ein Spiel für sie aus. Eine weitere funktion gibt euch Spieleempfehlungen anhand einer Umfrage ab falls sie mal was neues probieren möchten.
+Eine Sortier option wird es auch verfügen somit wird anhand der Spielzeit der Bewertungen oder des Kaufdatums 
+geordnet.
 
-### **Grobbeschreibung** 
-Wir implementieren eine art von Steam Library. In dieser Anwendung sollen Nutzer ihre Spiele verwalten. Dabei sollen die Errungenschaften die Spielzeit und ihre Bewertung gespeichert werden. Die Steam Library soll zudem die Daten speichern somit sind die Daten später abgreifbar falls die Person die Anwendung schließt.
 
-TODO Ausführlicher im Detail
 
 ### **Menüführung**
 Die Menüfuhrung ausschließlich in der Konsole zu verwenden. Beim Start der Anwendung gibt es eine Passwortabfrage und danach kann der Nutzer wählen zwischen:
