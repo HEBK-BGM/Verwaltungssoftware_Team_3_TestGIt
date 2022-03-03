@@ -72,7 +72,7 @@ Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichk
 Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswählt, so gelangt er wieder auf den Anfangs Screen wo er sich registrieren, abmelden oder das Programm beenden kann. Der Unterschied zum Beenden des Programms besteht darin, dass die Daten des Users weiterhin gespeichert bleiben.
 
 #### **Diagramm Abmelden**
-![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/AktivitaetsdiagrammRegistrierung.iuml)
+![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Abmelden_Aktivitaetsdiagramm.iuml)
 
 
 
