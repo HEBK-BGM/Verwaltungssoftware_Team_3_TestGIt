@@ -2,8 +2,8 @@
 start
 :Registrierung;
 :Eingabe Vorname;
-:Eingabe Nachname;
 :Eingabe Passwort;
+:Eingabe Alter;
 :Anzeige Menü;
 stop
 @enduml
