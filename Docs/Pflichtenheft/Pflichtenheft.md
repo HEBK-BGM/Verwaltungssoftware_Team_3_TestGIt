@@ -68,6 +68,9 @@ Es können maximal 11 Spiele angelegt werden. Danach erfolgt eine Ausgabe: "Maxi
 ### **Errungenschaft anlegen()**
 Nach dem der User sich angemeldet hat, kann er im Menü entweder ein Spiel anlegen, wodurch er gebeten wird, einen Namen für sein Spiel anzulegen. Danach wird er gebeten eine Errungenschaft für dieses Spiel anzulegen. Errungenschaften können auch angelegt werden, indem der Spieler im Menü "Errungenschaft anlegen" auswählt. Danach wird er gefragt für welches Spiel diese Errungenschaft sein soll. Danach wird er gebeten etwas einzugeben und wird danach wieder zurück zum Menü gebracht.
 
+#### **Diagramm Errungenschaft anlegen**
+![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Erungenschaften_aktivdia.iuml)
+
 #### **Beschreibung Registrieren**
 Wenn man das Programm startet, so wird einem ein Screen mit den Auswahlmöglichkeiten: "Registrieren", "Anmelden" und "Beenden" gezeigt. Bei der Registrierung wird ein neuer Benutzer erstellt. Er wird gebeten sein Vornamen, seinen Nachnamen und ein Passwort einzugeben. Diese Daten werden vorläufig in einem Array gespeichert.
 
@@ -87,8 +90,8 @@ Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswä
 
 
 ### **Klassendiagramm**
+![y](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm.iuml)
 
-![your-UML-diagram-name](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/agileProjekt_2_Java/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm.iuml)
 
 
 ### **Objektdiagramm**
