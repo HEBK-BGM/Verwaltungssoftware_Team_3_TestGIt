@@ -2,12 +2,14 @@
 split
    -[hidden]->
    :Spiel anlegen;
+   :Datum eingeben;
    :Errungenschaft eingeben;
 split again
    -[hidden]->
    :Errungenschaft anlegen;
+   :Datum eingeben;
    :Errungenschaft eingeben;
-   :Welches Spiel ist diese Errungenschaft für?;
+   :Für welches Spiel ist diese Errungenschaft?;
 end split
 :Errungenschaft zum Spiel hinzugefügt;
 
