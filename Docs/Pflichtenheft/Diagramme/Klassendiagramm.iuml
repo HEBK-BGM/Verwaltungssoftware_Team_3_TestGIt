@@ -5,7 +5,7 @@ class Benutzerverwaltung{
  -benutzer : Benutzer
  -überprüfeanmeldung ()
  + Benutzerverwaltung ()
- + anmeldung() : void
+ + registriere() : void
  - anmeldung(pPassword : String) : void
  + abmeldung() : void
  + zeigeMenue() : void
@@ -28,6 +28,9 @@ class MenueFuehrung{
  + speieleigenschaftenAnlegen(pBenutzer : Benutzer) : void
  + spieleigenschaftenAbfragen() : String
  + zeigeMenue(pBenutzerverwaltung : pBenutzerverwaltung) : void
+ +starteSpieleUmfrage
+ +zufälligesSpielauswählen(pSpiele[] : Spiele[])
+
  
  }
 
@@ -47,6 +50,7 @@ class Person{
 
 
 class Spiel{
+ -abzeichen : int
  -kaufjahr : int 
  -name : String
  +spiel(pName : String)
@@ -57,6 +61,7 @@ class Spiel{
  +setKaufjahr:int
  +getKaufjahr(pJahr:int)
  +toString() : String
+
 }
 
 class Errungenschaft{
@@ -69,16 +74,19 @@ class Errungenschaft{
  +getJahr(): String
  +setJahr(pErrungenschaft : Errungenschaft) : void
  +toString() String
+ +löscheErrungenschaft(pErrungenschaftID)
 }
 
 
 
 
 class Benutzer{
+  -level : int
   -passwort : String
+  +zeigeLevelan(pBenutzer:Benutzer)
   +änderePassword(pPassword : String) : void
   +ueberpruefeAnmeldedaten(pPassword : String, pName : String): boolean
-  + spieleAnlegen(pSpiel : Spiel) : void
+  + spieleAnlegen(pSpiel : Spiel) : String
   +alleSpieleAusgeben() : void
   +bewertungenFuerSpielAnlegen(pSpieleID : int, pErrungenschaft : String) : void
    +errungenschaftAnlegen(pSpieleID : int, pErrungenschaft : String) : void
@@ -92,14 +100,13 @@ class Datenleser{
   -leseBenutzerDatenEin : String
   -leseErrungenschaftein : Errungenschaft
   -leseSpieleein() : Spiel
-  +gebeBerwertungAus(): 
   }
 
 class Bewertung{
   +Bewertungspunkte:int
   +pBewertungstext:String
-  +setBewertung(pBewertungstext:String,pBewertungspunkte:int)
-  +löscheBewertung(pBewertngID:int)
+  +setBewertung(pBewertungstext:String,pBewertungspunkteint :int)
+  +löscheBewertung(pBewertungID:int)
 
 }
 
