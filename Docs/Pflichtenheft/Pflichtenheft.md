@@ -84,6 +84,9 @@ Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswä
 
 ## 3. Diagramm Dokumentation
 
+### **Sequenzdiagramm**
+![Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm.iuml)
+
 
 ### **Klassendiagramm**
 ![Klassendiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Klassendiagramm.iuml)
