@@ -1,23 +1,30 @@
 @startuml Objektdiagramm
 
-object zyklopus {
+object "zyklopus:Benutzer" as zyklopus {
 vorname = "Jost"
 nachname = "Trappmann"
 alter = 16
 passwort = "123456"
+steamlvl = "8"
 }
 
 
-object minecraft {
+object "csgo:Spiel" as csgo {
 kaufjahr = 2016
-name = "Miencraft"
+name = "CS:GO"
+abzeichen = "3"
 }
 
-object weNeedToGoDeeper {
-name = "We need to go deeper"
+object "kaltpizzaesser:Errungenschaft" as kaltpizzaesser {
+name = "Kaltpizzaesser"
 jahr = 2017
 }
-minecraft<|-- weNeedToGoDeeper
-zyklopus<|-- minecraft
-@enduml
 
+object "bewertung:bewertung" as bewertung{
+bewertungspunkte = 9/10
+Bewertungstext = sehr gut! rush b blyat
+}
+csgo --o kaltpizzaesser 
+zyklopus--|> csgo
+csgo --o bewertung
+@enduml
