@@ -11,7 +11,7 @@
       2. (optional) PAP, Struktogramm
 
 ## 1. Beschreibung der Anwendung
-Unser Programm soll einer Steam Library ähneln. Benutzer müssen sich zuerst Registririeren dort fragt man den Benutzer nach
+Unser Programm soll einer Steam Library ähneln. Benutzer müssen sich zuerst Registrieren dort fragt man den Benutzer nach
 seinem Namen und welches Passwort er haben will. Nach der Eingabe kann er sich entscheiden, ob seine Daten gespeichert werden sollen oder nicht. Die Daten werden in einer JSON Datei abgelegt die seinen Benutzernamen als Dateinamen festlegt die JSON Datei wird über die Klasse Datenleser bearbeitet. Durch das Anmelden kann er dann sein Namen eingeben,es wird dann gesucht nach einer Datei mit diesem Namen. Falls dieser Name nicht vorhanden ist dann wird darauf hingewiesen und man wird in den Startbildschirm zurück geführt. Im Mainmenü kann der Benutzer seine Spiele verwalten und hat stets die Option das Programm zu beenden. Die Spiele werden in ein Array[] gelegt das sich beim Benutzer befindet. Ein Spiel hat viele weitere Arrays[]. Errungenschaften ist eine davon, sie braucht einen Integer der das Datum bestimmt und einen String der den Namen der Errungenschaft bestimmt. Bewertungen braucht genauso wie die Errungenschaften ein String und ein 
 Integer, die Besonderheit daran ist ,dass es ein Integer zwischen 1-5 sein muss falls die Zahl nicht passt, weißt er den Nutzer daraufhin und fragt ihn erneut.
 Jede Eintragung kann abgebrochen und verändert werden dazu muss der jeweilige Platz gewählt werden dies führt zu einem Optionsmenü mit den drei Optionen "Löschen" "Verändern" und "Zurückkehren". Die JSon Datei wird stets aktualisiert.
