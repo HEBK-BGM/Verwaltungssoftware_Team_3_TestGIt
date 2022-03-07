@@ -1,7 +1,7 @@
 @startuml
 start
 :Registrierung;
-:Eingabe Vorname;
+:Eingabe Name;
 :Eingabe Passwort;
 :Eingabe Alter;
 :Anzeige Menü;

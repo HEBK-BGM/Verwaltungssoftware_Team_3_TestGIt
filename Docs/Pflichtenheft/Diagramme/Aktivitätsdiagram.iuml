@@ -3,10 +3,10 @@ if (**haben sie bereits einen Account?**) then (Ja)
 :Anmelden;
 :Name und Passwort eingeben;
 else (nein)
-:regristriren;
+:regristrieren;
 :name festlegen;
 :Spiele festlegen;
-:Achevments, Spielzeit und kaufdatum festlegen;
+:Achievements, Spielzeit und kaufdatum festlegen;
 endif
 :zugriff auf die Steamlibary;
 
