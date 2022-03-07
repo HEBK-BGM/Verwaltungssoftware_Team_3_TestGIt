@@ -1,4 +1,3 @@
-
 @startuml
 actor Benutzer
 participant "bv1:Benutzerverwaltung"
@@ -22,8 +21,7 @@ Benutzer ->"m1:Menuefuehrung" : Legt Passwort fest
 Benutzer -> "m1:Menuefuehrung" : Gibt Anmeldedaten an
 "m1:Menuefuehrung" -> "b1:Benutzer" : Vergleicht Anmeldedaten
 "b1:Benutzer" -> "m1:Menuefuehrung" : Gibt Date raus
-"m1:Menuefuehrung" -> "bv1:Benutzerverwaltung" Rückgabewert
+"m1:Menuefuehrung" -> "bv1:Benutzerverwaltung" : Rückgabewert
 "bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : Falls Rückgabewert false, anmelden()
 "bv1:Benutzerverwaltung" -> Benutzer : Falls Rückgabewert true, gewähre Zugriff
 @enduml
-

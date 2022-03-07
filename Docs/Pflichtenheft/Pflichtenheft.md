@@ -85,7 +85,11 @@ Im Menü wird dem User die Möglichkeit "Abmelden" geboten. Wenn er diese auswä
 ## 3. Diagramm Dokumentation
 
 ### **Sequenzdiagramm**
-![Sequenzdiagramm](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/teach404W/Verwaltungssoftware_Team_3/main/Docs/Pflichtenheft/Diagramme/Sequenzdiagramm.iuml)
+https://www.plantuml.com/plantuml/uml/fPBDYjim4CVlVWgnfrre3diDYzaD_RYqK7feeRU9_RSYAYjcD8gXpvF7w2qlLj7WH7Qja92p_Xyplz6h5s89hIseaYsh5LoGt-2Y8nPJcOwSg8VrxdavlEp0FLa9JZzCH6VDvALzNdw9BsW2DlpFE0ZLeio5gwNw1WqlRC0eShB5eXnNHz_BIyKWGLbcRR5uPgxevNFdurFnloJwXhYe_a4i44MXKMzMm2gu-lJkg4MoQQRmarbBngnWt6I4OVPBr0v_gb-QrkZ1edPRDzqfHx8ShRQAbiDUZ9Ra3b5tErA2gy7uIjxtMvR7v5fpXDKOyM0Zrp3f4T3Pji_GSZAf1bvo29CvviQ4SHfYkaxWJu5FHMhBxpm-Wd30NOSSCcvdxrhO6kwAl_o1--DlVZjwQXAuA_zlQecTLnB_3jOMfjfCEiUwYyNlIQ2OWhyJx-raFvArVdAZXgp7knHwDZPXdmaJ3Z5Bep_iDmprCsWsJLEymjMXjNy1
+
+
+
+
 
 
 ### **Klassendiagramm**
