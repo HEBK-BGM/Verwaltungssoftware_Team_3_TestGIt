@@ -1,18 +1,27 @@
 @startuml
 actor Benutzer
-participant Server
-Benutzer -> Server : Anfrage Regestrierung
-Server -> Benutzer : Gewährt Regestrierung
-Benutzer ->  Server : Regestriere 
-Server -> Server : Speichere Anmeldedaten
-Server -> Benutzer: Fordere Anmeldung an
-Benutzer -> Server : Meldet sich an 
-Server -> Server : Meldet Benutzer an
-Server -> Benutzer : Gewährt Zugriff auf Profil
-Benutzer -> Server : Erstellt Spiel 
-Server -> Server : Speichert Spiel
-Server -> Benutzer : Bestätigt Erstellung des Spiels
-Benutzer -> Server : Erstellt Achievment
-Server -> Server : Speichert Achievment
-Server -> Benutzer : Bestätigt Erstellung des Achievments
+participant "bv1:Benutzerverwaltung"
+participant "b1:Benutzer"
+participant "m1:Menuefuehrung"
+Benutzer ->"bv1:Benutzerverwaltung" : Regestriere
+"bv1:Benutzerverwaltung"--> "b1:Benutzer" : <<create>>
+"bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : regestriere()
+"m1:Menuefuehrung"-> Benutzer : Wartet auf Alter und Benutzername
+Benutzer -> "m1:Menuefuehrung" : Gibt Alter und Benutzername ein
+"m1:Menuefuehrung" -> "bv1:Benutzerverwaltung" : Rückgabewert von regestriere()
+"bv1:Benutzerverwaltung"->> Benutzer : Bestätigt Regestrierung
+"bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : aenderePasswort(b1:Benutzer)
+"m1:Menuefuehrung" -> Benutzer : Passwortanfrage
+Benutzer ->"m1:Menuefuehrung" : Legt Passwort fest
+"m1:Menuefuehrung" -> "b1:Benutzer" : aenderePasswort(eingetipptes Passwort)
+"b1:Benutzer" -> "m1:Menuefuehrung" : Rückgabewert true
+"m1:Menuefuehrung" -> "bv1:Benutzerverwaltung" : Rückgabewert true
+"bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : anmelden()
+"m1:Menuefuehrung"-> Benutzer : Erwartet Anmeldedaten
+Benutzer -> "m1:Menuefuehrung" : Gibt Anmeldedaten an
+"m1:Menuefuehrung" -> "b1:Benutzer" : Vergleicht Anmeldedaten
+"b1:Benutzer" -> "m1:Menuefuehrung" : Gibt Date raus
+"m1:Menuefuehrung" -> "bv1:Benutzerverwaltung" : Rückgabewert
+"bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : Falls Rückgabewert false, anmelden()
+"bv1:Benutzerverwaltung" -> Benutzer : Falls Rückgabewert true, gewähre Zugriff
 @enduml
