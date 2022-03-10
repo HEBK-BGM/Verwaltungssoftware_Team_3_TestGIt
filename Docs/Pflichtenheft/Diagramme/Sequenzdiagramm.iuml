@@ -25,3 +25,4 @@ Benutzer -> "m1:Menuefuehrung" : Gibt Anmeldedaten an
 "bv1:Benutzerverwaltung" -> "m1:Menuefuehrung" : Falls Rückgabewert false, anmelden()
 "bv1:Benutzerverwaltung" -> Benutzer : Falls Rückgabewert true, gewähre Zugriff
 @enduml
+
