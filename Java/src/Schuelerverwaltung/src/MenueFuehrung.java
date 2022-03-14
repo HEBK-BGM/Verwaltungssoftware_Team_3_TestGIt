@@ -33,7 +33,7 @@ public class MenueFuehrung {
             pPasswort2 = Read.string();
             b=1;
         }
-}
+    }
        
         System.out.println("Gib dein Alter ein");
         int pAlter = Read.number();
@@ -66,18 +66,18 @@ public class MenueFuehrung {
     // Ausführung der Befehle von darüber ist auch akutell noch unwichtig
     public void zeigeMenue(Benutzer pBenutzer){
         while(pBenutzer.getAngemeldet() == true){
-                System.out.println("-----------");
-                switch(start()){
-                    case 1: pBenutzer.spielfestlegen();
-                            break;
-                    case 2: pBenutzer.spieleanzeigen();
-                            break;
-                    case 3: pBenutzer.menueanzeigen();
-                    case 4: pBenutzer.setangemeldet(false);;
-                            break;
-                    default: System.out.println("Bitte eingabe wiederholen");
-                }
-            }
+            System.out.println("-----------");
+            switch(start()){
+                case 1: pBenutzer.spielfestlegen();
+                        break;
+                case 2: pBenutzer.spieleanzeigen();
+                        break;
+                case 3: pBenutzer.menueanzeigen();
+                case 4: pBenutzer.setangemeldet(false);;
+                        break;
+                default: System.out.println("Bitte eingabe wiederholen");
+            }   
+        }
     
             
        
@@ -86,7 +86,8 @@ public class MenueFuehrung {
 
 
 
-        }}
+    }
+}
   
 
 
