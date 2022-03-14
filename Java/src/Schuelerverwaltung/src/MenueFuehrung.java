@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class MenueFuehrung {
-
     Scanner sc = new Scanner(System.in);
-
+    Spiel spiel;
+    int i = 1;
     public Benutzer regestriere() {
         int b = 1;
 
@@ -44,7 +44,45 @@ public class MenueFuehrung {
 
        return pBenutzer;
     }
-}
+
+    public boolean anmelden(Benutzer pBenutzer){
+       return pBenutzer.anmeldung();
+
+    }
+    public int start(){
+        System.out.println("");
+        System.out.println("Wählen Sie aus:");
+        System.out.println(" (1) Spiel anlegen:");/*
+        System.out.println(" (2) Note für Fach anlegen:");
+        System.out.println(" (3) Alle Fächer und Noten ausgeben");
+        */
+        System.out.println(" (4) Abmelden");
+               
+        return Integer.valueOf(sc.nextLine());
+    }
+    public void zeigeMenue(Benutzer pBenutzer){
+        while(anmelden(pBenutzer) == true){
+                System.out.println("-----------");
+                switch(start()){
+                    case 1: 
+                            break;/*
+                    case 2: noteAnlegen(pSchuelerverwaltung.getSchueler());
+                            break;
+                    case 3: pSchuelerverwaltung.getSchueler().alleFaecherAusgeben();
+                            break;
+                    case 4: abmeldung(pSchuelerverwaltung);
+                            break;*/
+                    default: System.out.println("Bitte eingabe wiederholen");
+                }
+            }  
+            
+       
+       
+        
+
+
+
+        }}
     /** 
     public String anmeldung(){
         breakLine();
