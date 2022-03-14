@@ -4,6 +4,8 @@ public class MenueFuehrung {
     Scanner sc = new Scanner(System.in);
     Spiel spiel;
     int i = 1;
+
+    //regestriere funktion ist selbsterklärend
     public Benutzer regestriere() {
         int b = 1;
 
@@ -15,7 +17,7 @@ public class MenueFuehrung {
 
         System.out.println("Gib das Passwort erneut ein");
         String pPasswort2 = sc.nextLine();
-       
+       //Passwörter werden verglichen das darüber muss aber dennoch da sein damit der STrin erstellt wird
     while (b==1) {
 
   
@@ -38,17 +40,18 @@ public class MenueFuehrung {
        
 
         
-       
+       //dadurch wird der Benutzer der oben in der Methode angegeben wird implementiert
             
        Benutzer pBenutzer = new Benutzer(pBenutzername, pAlter,  pPasswort);
 
        return pBenutzer;
     }
-
+    //wird noch nicht verwendet wird aber vlt. noch gebraucht funktion wird noch über benutzer.anmeldung() ausgeführt geht aber auch hierrüber
     public boolean anmelden(Benutzer pBenutzer){
        return pBenutzer.anmeldung();
 
     }
+    // Das ist dafür dass mann wenn man angemeldet ist soll das dafür verwendet werden hat bisher keinen tieferen Sinn wird aber süäter wichtig
     public int start(){
         System.out.println("");
         System.out.println("Wählen Sie aus:");
@@ -60,6 +63,7 @@ public class MenueFuehrung {
                
         return Integer.valueOf(sc.nextLine());
     }
+    // Ausführung der Befehle von darüber ist auch akutell noch unwichtig
     public void zeigeMenue(Benutzer pBenutzer){
         while(anmelden(pBenutzer) == true){
                 System.out.println("-----------");

@@ -1,11 +1,15 @@
+//Sinn der Klasse ist selbsterklärend der rEst muss geschaut werden
 public class Spiel {
     private String name;
-    private Errungenschaft[] errungenschaft;
+    int i;
+    //Wir wollen die Errungenschaften in Spiel erstellen
+    private Errungenschaft[] errungenschaft = new Errungenschaft[i];
     private int kaufjahr;
     public Spiel(String pname,int pkaufjahr){
         name = pname;
         kaufjahr=pkaufjahr;
     }
+    // getter und setter
     public void setname(String pname){
         name = pname;
     }
@@ -18,4 +22,6 @@ public class Spiel {
     public int getkaufjahr(){
         return kaufjahr;
     }
+    
+    
 }
