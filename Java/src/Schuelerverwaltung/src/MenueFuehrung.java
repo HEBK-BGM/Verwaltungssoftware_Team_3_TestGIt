@@ -1,7 +1,7 @@
-import java.util.Scanner;
+
 
 public class MenueFuehrung {
-    Scanner sc = new Scanner(System.in);
+    
     Spiel spiel;
     int i = 1;
 
@@ -11,12 +11,12 @@ public class MenueFuehrung {
 
     
         System.out.println("Gib den Benutzernamen ein");
-        String pBenutzername = sc.nextLine();
+        String pBenutzername =Read.string();
         System.out.println("Gib das Passwort ein");
-        String pPasswort = sc.nextLine();
+        String pPasswort = Read.string();
 
         System.out.println("Gib das Passwort erneut ein");
-        String pPasswort2 = sc.nextLine();
+        String pPasswort2 = Read.string();
        //Passwörter werden verglichen das darüber muss aber dennoch da sein damit der STrin erstellt wird
     while (b==1) {
 
@@ -27,16 +27,16 @@ public class MenueFuehrung {
         } else {
             System.out.println("Du hast das falsche Passwort eingegeben, bitte versuche es erneut.");
             System.out.println("Gib das Passwort ein");
-            pPasswort = sc.nextLine();
+            pPasswort = Read.string();
     
             System.out.println("Gib das Passwort erneut ein");
-            pPasswort2 = sc.nextLine();
+            pPasswort2 = Read.string();
             b=1;
         }
 }
        
         System.out.println("Gib dein Alter ein");
-        int pAlter = Integer.valueOf(sc.nextLine());
+        int pAlter = Read.number();
        
 
         
@@ -55,30 +55,30 @@ public class MenueFuehrung {
     public int start(){
         System.out.println("");
         System.out.println("Wählen Sie aus:");
-        System.out.println(" (1) Spiel anlegen:");/*
-        System.out.println(" (2) Note für Fach anlegen:");
-        System.out.println(" (3) Alle Fächer und Noten ausgeben");
-        */
+        System.out.println(" (1) Spiel anlegen:");
+        System.out.println(" (2) Alle Spiele anzeigen:");
+        System.out.println(" (3) Spiele Verwalten");
         System.out.println(" (4) Abmelden");
                
-        return Integer.valueOf(sc.nextLine());
-    }
+        return Read.number();
+    } 
+
     // Ausführung der Befehle von darüber ist auch akutell noch unwichtig
     public void zeigeMenue(Benutzer pBenutzer){
-        while(anmelden(pBenutzer) == true){
+        while(pBenutzer.getAngemeldet() == true){
                 System.out.println("-----------");
                 switch(start()){
-                    case 1: 
-                            break;/*
-                    case 2: noteAnlegen(pSchuelerverwaltung.getSchueler());
+                    case 1: pBenutzer.spielfestlegen();
                             break;
-                    case 3: pSchuelerverwaltung.getSchueler().alleFaecherAusgeben();
+                    case 2: pBenutzer.spieleanzeigen();
                             break;
-                    case 4: abmeldung(pSchuelerverwaltung);
-                            break;*/
+                    case 3: pBenutzer.menueanzeigen();
+                    case 4: pBenutzer.setangemeldet(false);;
+                            break;
                     default: System.out.println("Bitte eingabe wiederholen");
                 }
-            }  
+            }
+    
             
        
        
@@ -87,94 +87,6 @@ public class MenueFuehrung {
 
 
         }}
-    /** 
-    public String anmeldung(){
-        breakLine();
-        System.out.println("Bitte geben Sie ihr Passwort ein!");
-
-        String ret = sc.next();
-
-        return ret;
-    }
-    public void abmeldung( Schuelerverwaltung pSchuelerverwaltung){
-        breakLine();
-        pSchuelerverwaltung.abmeldung();
-        System.out.println("Sie werden abgemeldet");
-        
-    }
-
-    public void zeigeFaecher(Schueler pSchueler){
-        breakLine();
-        pSchueler.alleFaecherAusgeben();
-        breakLine();
-    }
-
-    public Fach fachAnlegen(){
-        breakLine();
-        System.out.println("Bitte Fachnamen angeben");
-        String pName = sc.next();
-
-        Fach ret = new Fach(pName);
-
-        return ret;
-    }
-
-    public int start(){
-        breakLine();
-        System.out.println("Wählen Sie aus:");
-        System.out.println(" (1) Fach anlegen:");
-        System.out.println(" (2) Note für Fach anlegen:");
-        System.out.println(" (3) Alle Fächer und Noten ausgeben");
-        System.out.println(" (4) Abmelden");
-        
-        return sc.nextInt();
-    }
-
-
-    public void noteAnlegen(Schueler pSchueler){
-        breakLine();
-        System.out.println("Für welches Fach wollen Sie eine Note anlegen?");
-        pSchueler.alleFachNamenMitNummernAusgeben();
-        System.out.println("Bitte Fachnummer angeben");
-        int nummer = sc.nextInt();
-
-        pSchueler.noteFuerFachAnlegen(nummer, noteAbfragen());
-    }
-
-    private Note noteAbfragen(){
-        breakLine();
-        System.out.println("Wie lautet die Note:");
-        int pNote = sc.nextInt();
-
-        System.out.println("Wie lautet das Jahr:");
-        int pJahr = sc.nextInt();
-
-        Note note = new Note(pNote, pJahr);
-
-        return note;
-    }
-
-*/
-    
-    /*
-
-    public void zeigeMenue(Schuelerverwaltung pSchuelerverwaltung){
-        while(pSchuelerverwaltung.getAngemeldet() == true){
-            System.out.println("-----------");
-            switch(start()){
-                case 1: pSchuelerverwaltung.getSchueler().fachAnlegen(fachAnlegen());
-                        break;
-                case 2: noteAnlegen(pSchuelerverwaltung.getSchueler());
-                        break;
-                case 3: pSchuelerverwaltung.getSchueler().alleFaecherAusgeben();
-                        break;
-                case 4: abmeldung(pSchuelerverwaltung);
-                        break;
-                default: System.out.println("Bitte eingabe wiederholen");
-            }
-        }
-        
-   }
-   */
+  
 
 
