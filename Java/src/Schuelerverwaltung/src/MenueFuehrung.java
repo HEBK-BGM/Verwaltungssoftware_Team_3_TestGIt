@@ -70,7 +70,7 @@ public class MenueFuehrung {
             switch(start()){
                 case 1: pBenutzer.spielfestlegen();
                         break;
-                case 2: pBenutzer.spieleanzeigen();
+                case 2: pBenutzer.spieleUswAusgeben();
                         break;
                 case 3: pBenutzer.spielemenue();break;
                 case 4: pBenutzer.setangemeldet(false);;

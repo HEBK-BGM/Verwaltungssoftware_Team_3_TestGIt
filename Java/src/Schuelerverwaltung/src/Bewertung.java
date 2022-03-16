@@ -8,4 +8,7 @@ public class Bewertung {
     public int getBewertung(){
         return bewertung;
     }
+    public String getBewertungstext(){
+        return bewertungstext;
+    }
 }

@@ -96,5 +96,13 @@ public class Benutzer extends Person{
             case 2: spiel[spielnumber].bewertungscanner(); break;
         }
     }
+    public void spieleUswAusgeben(){
+        for (int i = 0; i < counter; i++){
+            System.out.println(spiel[i].getname());
+            System.out.println("Du hast in diesem Spiel folgende Errungenschaften");
+            spiel[i].errungenschaftenausgeben();
+         
+        }
+    }
 }
 

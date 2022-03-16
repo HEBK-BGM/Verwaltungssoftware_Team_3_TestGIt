@@ -2,7 +2,7 @@
 public class Spiel {
   
     private String name;
-    int i;
+    int counter;
     //Wir wollen die Errungenschaften in Spiel erstellen
     private Errungenschaft[] errungenschaft = new Errungenschaft[10];
     private Bewertung bewertung;
@@ -34,9 +34,10 @@ public class Spiel {
         return pErrungenschaft;
     }
     public void errungeschaftfestlegen(){
-        errungenschaft[i] = errungenschaftanlegen();
-        System.out.println(errungenschaft[i].getname());
-        i++;
+        errungenschaft[counter] = errungenschaftanlegen();
+        System.out.println(errungenschaft[counter].getname());
+        System.out.println(counter);
+        counter++;
     }
     public Bewertung bewertunganlegen(){
         System.out.println("Bitte geben sie ihre Bewertung (1-5) ein");
@@ -57,6 +58,21 @@ public class Spiel {
         System.out.println("Sie haben für dieses Spiel bereits eien Bewertung erstlellt");
     }
     }
+    public void errungenschaftenausgeben(){
+        for (int i = 0; i < counter; i++){
+            System.out.println(i);
+            System.out.println(errungenschaft[i].getname());
+            System.out.println(errungenschaft[i].getjahr());
+        }
+    }
+    public void bewertungausgeben(){
+        if (bewertet=true){
+            System.out.println(bewertung.getBewertung());
+            System.out.println(bewertung.getBewertungstext());
+        }
+    }
+
+
     
     
 }
