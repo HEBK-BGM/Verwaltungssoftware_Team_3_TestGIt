@@ -56,6 +56,7 @@ public class Spiel {
     public void bewertungscanner(){
         if (bewertet==false){
       bewertung = bewertunganlegen();
+      System.out.println(bewertung.getBewertung());
         bewertet= true;
     }else{
         System.out.println("Sie haben für dieses Spiel bereits eien Bewertung erstlellt");

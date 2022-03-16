@@ -3,7 +3,6 @@
 public class Benutzerverwaltung {
     private Benutzer benutzer;
     private MenueFuehrung menuefuehrung;
-    int i;
 
 
     public Benutzerverwaltung (){
