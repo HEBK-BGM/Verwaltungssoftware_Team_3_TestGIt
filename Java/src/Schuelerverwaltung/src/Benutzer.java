@@ -92,15 +92,15 @@ public class Benutzer extends Person{
     public void spielemenue(){
         int spielnumber= menueanzeigen();
         switch(spielemenueanzeigen()){
-            case 1: spiel[spielnumber].errungenschaftanlegen(); break;
+            case 1: spiel[spielnumber].errungenschaftfestlegen(); break;
             case 2: spiel[spielnumber].bewertungscanner(); break;
         }
     }
     public void spieleUswAusgeben(){
         for (int i = 0; i < counter; i++){
             System.out.println(spiel[i].getname());
-            System.out.println("Du hast in diesem Spiel folgende Errungenschaften");
             spiel[i].errungenschaftenausgeben();
+            spiel[i].bewertungausgeben();
          
         }
     }

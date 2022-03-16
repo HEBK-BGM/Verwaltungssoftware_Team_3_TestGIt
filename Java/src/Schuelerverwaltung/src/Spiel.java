@@ -8,6 +8,9 @@ public class Spiel {
     private Bewertung bewertung;
     private int kaufjahr;
     private boolean bewertet = false;
+    public Bewertung getBewertung() {
+        return bewertung;
+    }
     public Spiel(String pname,int pkaufjahr){
         name = pname;
         kaufjahr=pkaufjahr;
@@ -33,7 +36,7 @@ public class Spiel {
         Errungenschaft pErrungenschaft = new Errungenschaft(pname, pjahr);
         return pErrungenschaft;
     }
-    public void errungeschaftfestlegen(){
+    public void errungenschaftfestlegen(){
         errungenschaft[counter] = errungenschaftanlegen();
         System.out.println(errungenschaft[counter].getname());
         System.out.println(counter);
@@ -52,21 +55,24 @@ public class Spiel {
     }
     public void bewertungscanner(){
         if (bewertet==false){
-      bewertunganlegen();
+      bewertung = bewertunganlegen();
         bewertet= true;
     }else{
         System.out.println("Sie haben für dieses Spiel bereits eien Bewertung erstlellt");
     }
     }
     public void errungenschaftenausgeben(){
-        for (int i = 0; i < counter; i++){
-            System.out.println(i);
-            System.out.println(errungenschaft[i].getname());
-            System.out.println(errungenschaft[i].getjahr());
-        }
+        System.out.println("Für dieses Spiel haben Sie folgende errungenschaften");
+        int b = 0;
+      while (b<counter){
+        System.out.println(errungenschaft[b].getname());
+        System.out.println(errungenschaft[b].getjahr());
+        b++;
+      }
+        System.out.println();
     }
     public void bewertungausgeben(){
-        if (bewertet=true){
+        if (bewertet==true){
             System.out.println(bewertung.getBewertung());
             System.out.println(bewertung.getBewertungstext());
         }
