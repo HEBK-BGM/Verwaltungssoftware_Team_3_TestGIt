@@ -66,7 +66,7 @@ public class Benutzer extends Person{
 
     public void spielfestlegen(){
         spiel[counter] = spielanlegen();
-        System.out.println(spiel[counter].getname());
+
         counter++;
         
     }
@@ -85,8 +85,9 @@ public class Benutzer extends Person{
     }
     public int spielemenueanzeigen(){
         System.out.println("Wählenn sie aus");
-        System.out.println("Errungenschaft anlegen(1)");
-        System.out.println("Bewrtung anlegen(2)");
+        System.out.println("Errungenschaft anlegen (1)");
+        System.out.println("Bewrtung anlegen (2)");
+        System.out.println("Abzeichenleven festlegen (3)");
         return Read.number();
     }
     public void spielemenue(){
@@ -94,6 +95,7 @@ public class Benutzer extends Person{
         switch(spielemenueanzeigen()){
             case 1: spiel[spielnumber].errungenschaftfestlegen(); break;
             case 2: spiel[spielnumber].bewertungscanner(); break;
+            case 3: spiel[spielnumber].abzeichenscanner(); break;
         }
     }
     public void spieleUswAusgeben(){
@@ -101,6 +103,7 @@ public class Benutzer extends Person{
             System.out.println(spiel[i].getname());
             spiel[i].errungenschaftenausgeben();
             spiel[i].bewertungausgeben();
+            spiel[i].abzeichenausgeben();
          
         }
     }

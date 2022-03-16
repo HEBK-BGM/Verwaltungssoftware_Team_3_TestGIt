@@ -8,6 +8,8 @@ public class Spiel {
     private Bewertung bewertung;
     private int kaufjahr;
     private boolean bewertet = false;
+    private Abzeichen abzeichen;
+    private boolean abzeichenbestimmt = false;
     public Bewertung getBewertung() {
         return bewertung;
     }
@@ -38,8 +40,6 @@ public class Spiel {
     }
     public void errungenschaftfestlegen(){
         errungenschaft[counter] = errungenschaftanlegen();
-        System.out.println(errungenschaft[counter].getname());
-        System.out.println(counter);
         counter++;
     }
     public Bewertung bewertunganlegen(){
@@ -56,7 +56,6 @@ public class Spiel {
     public void bewertungscanner(){
         if (bewertet==false){
       bewertung = bewertunganlegen();
-      System.out.println(bewertung.getBewertung());
         bewertet= true;
     }else{
         System.out.println("Sie haben für dieses Spiel bereits eien Bewertung erstlellt");
@@ -78,8 +77,24 @@ public class Spiel {
             System.out.println(bewertung.getBewertungstext());
         }
     }
+    public Abzeichen abzeichenanlegen(){
+        System.out.println("Geben sie das Level das Abzeichens ein");
+        int level = Read.number();
+        Abzeichen pabzeichen = new Abzeichen(level);
+        return pabzeichen;
+    }
 
-
-    
-    
+    public void abzeichenscanner(){
+        if (abzeichenbestimmt==false){
+        abzeichen = abzeichenanlegen();
+        abzeichenbestimmt= true;
+        }else{
+            System.out.println("Sie haben für dieses Spiel bereits ein Abzeichen erstlellt");
+        } 
+    }
+    public void abzeichenausgeben(){
+        if (abzeichenbestimmt==true){
+            System.out.println(abzeichen.getlevel());
+        }
+    }
 }
