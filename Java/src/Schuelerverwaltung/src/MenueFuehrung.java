@@ -72,7 +72,7 @@ public class MenueFuehrung {
                         break;
                 case 2: pBenutzer.spieleanzeigen();
                         break;
-                case 3: pBenutzer.menueanzeigen();
+                case 3: pBenutzer.spielemenue();break;
                 case 4: pBenutzer.setangemeldet(false);;
                         break;
                 default: System.out.println("Bitte eingabe wiederholen");

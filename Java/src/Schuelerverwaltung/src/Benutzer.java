@@ -76,24 +76,25 @@ public class Benutzer extends Person{
             System.out.println(spiel[i].getname()+ "("+i+")");
         }
     }
-    public void menueanzeigen(){
+    public int menueanzeigen(){
         spieleanzeigen();
         System.out.println("Welches Spiel wählst du?");
         int gamenumber = Read.number();
         System.out.println("Spiel:"+spiel[gamenumber].getname());
-        spiel[gamenumber].errungeschaftfestlegen();
-        /*System.out.println("Wählen Sie aus:");
-        System.out.println(" (1) Errugnenschaft anlegen:");
-        System.out.println(" (2) ...:");
-        int option = Integer.valueOf(sc.nextLine());
-        while (option!=1)
-        switch(option){
-            case 1: spiel[gamenumber].errungeschaftfestlegen();
-                    break;
-            case 2: 
-                    break;
-            default: System.out.println("Bitte eingabe wiederholen"); option = Integer.valueOf(sc.nextLine()); break;
-        }*/
+      return gamenumber;
+    }
+    public int spielemenueanzeigen(){
+        System.out.println("Wählenn sie aus");
+        System.out.println("Errungenschaft anlegen(1)");
+        System.out.println("Bewrtung anlegen(2)");
+        return Read.number();
+    }
+    public void spielemenue(){
+        int spielnumber= menueanzeigen();
+        switch(spielemenueanzeigen()){
+            case 1: spiel[spielnumber].errungenschaftanlegen(); break;
+            case 2: spiel[spielnumber].bewertungscanner(); break;
+        }
     }
 }
 
