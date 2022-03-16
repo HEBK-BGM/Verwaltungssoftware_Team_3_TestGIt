@@ -24,6 +24,19 @@ object "bewertung:bewertung" as bewertung{
 bewertungspunkte = 9/10
 Bewertungstext = sehr gut! rush b blyat
 }
+
+object "datenleser:Datenleser" as datenleser{
+
+}
+
+object "menuefuehrung:Menuefuehrung" as menuefruehrung{
+
+}
+
+object "benutzerverwaltung:Benutzerverwaltung" as benutzerverwaltung{
+    
+}
+
 csgo --o kaltpizzaesser 
 zyklopus--|> csgo
 csgo --o bewertung

@@ -3,7 +3,7 @@ if (**haben sie bereits einen Account?**) then (Ja)
 :Anmelden;
 :Name und Passwort eingeben;
 else (nein)
-:regristrieren;
+:registrieren;
 :name festlegen;
 :Spiele festlegen;
 :Achievements, Spielzeit und kaufdatum festlegen;
