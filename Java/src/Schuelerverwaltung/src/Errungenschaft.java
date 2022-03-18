@@ -2,9 +2,12 @@
 public class Errungenschaft {
     private String name;
     private int jahr;
-    public Errungenschaft(String pname, int pjahr){
+    private boolean jahrfestglegt = false;
+    public Errungenschaft(String pname){
         name=pname;
-        jahr=pjahr;
+    }
+    public boolean getjahrfestgelegt(){
+        return jahrfestglegt;
     }
     public void setname(String pname){
         name = pname;
@@ -14,5 +17,16 @@ public class Errungenschaft {
     }
     public int getjahr(){
         return jahr;
+    }
+    public void setjahr(){
+        System.out.println("Geben sie das Jahr der Errungenschaft ein");
+        System.out.println("Wenn sie das nicht wissen geben sie bitte x ein");
+        String yesONo = Read.string();
+        if (yesONo.equals("x")){
+            System.out.println("Sie haben kein Jahr angegeben");
+        }else{
+            jahr = Integer.valueOf(yesONo);
+            jahrfestglegt = true;
+        }
     }
 }

@@ -57,9 +57,8 @@ public class Benutzer extends Person{
     public Spiel spielanlegen(){
         System.out.println("Bitte gib den Namen des Spiels ein");
         String pName= Read.string();
-        System.out.println("Bitte gib das Kaufhahr des Spiels ein");
-        int pKaufjahr = Read.number();
-        Spiel pSpiel = new Spiel(pName, pKaufjahr);
+
+        Spiel pSpiel = new Spiel(pName);
         return pSpiel;
 
     }
@@ -67,6 +66,7 @@ public class Benutzer extends Person{
 
     public void spielfestlegen(){
         spiel[counter] = spielanlegen();
+        spiel[counter].setkaufjahr();
         spiel[counter].setspiezeit();
         counter++;
         
@@ -84,7 +84,7 @@ public class Benutzer extends Person{
         System.out.println("Spiel:"+spiel[gamenumber].getname());
       return gamenumber;
     }
-    public int spielemenueanzeigen(){
+    public int spielemenueanzeigen(int i){
         System.out.println("Wählenn sie aus");
         System.out.println("Errungenschaft anlegen (1)");
         System.out.println("Bewrtung anlegen (2)");
@@ -92,12 +92,16 @@ public class Benutzer extends Person{
         return Read.number();
     }
     public void spielemenue(){
+        int b = 0;
+        
         if(counter!=0){
+            while(b==0){
             int spielnumber= menueanzeigen();
-            switch(spielemenueanzeigen()){
-                case 1: spiel[spielnumber].errungenschaftfestlegen(); break;
-                case 2: spiel[spielnumber].bewertungscanner(); break;
-                case 3: spiel[spielnumber].abzeichenscanner(); break;
+            switch(spielemenueanzeigen(spielnumber)){
+                case 1: spiel[spielnumber].errungenschaftfestlegen();b=1; break;
+                case 2: spiel[spielnumber].bewertungscanner();b=1; break;
+                case 3: spiel[spielnumber].abzeichenscanner();b=1; break;
+                default: System.out.println("Bitte geben Sie eien der Zahlen ein");}
             }
         }else {
             System.out.println("Legen sie zuerst ein Spiel an");
@@ -107,8 +111,10 @@ public class Benutzer extends Person{
         for (int i = 0; i < counter; i++){
             Read.line();
             System.out.println(spiel[i].getname());
-            System.out.println("Kaufjahr:"+spiel[i].getkaufjahr());
-            System.out.println("Spielstuden:"+spiel[i].getspielzeit());
+            if(spiel[i].getkaufjahrfestgelegt()==true){
+            System.out.println("Kaufjahr:"+spiel[i].getkaufjahr());}
+            if(spiel[i].getspielstundenfestgelegt()==true){
+            System.out.println("Spielstudnen:"+spiel[i].getspielzeit());}
             spiel[i].errungenschaftenausgeben();
             spiel[i].bewertungausgeben();
             spiel[i].abzeichenausgeben();

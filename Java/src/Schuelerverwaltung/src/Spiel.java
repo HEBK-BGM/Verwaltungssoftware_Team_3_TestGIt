@@ -9,14 +9,15 @@ public class Spiel {
     private Bewertung bewertung;
     private int kaufjahr;
     private boolean bewertet = false;
+    private boolean spielstudnengelegt = false;
     private Abzeichen abzeichen;
+    private boolean kaufjahrvorhanden = false;
     private boolean abzeichenbestimmt = false;
     public Bewertung getBewertung() {
         return bewertung;
     }
-    public Spiel(String pname,int pkaufjahr){
+    public Spiel(String pname){
         name = pname;
-        kaufjahr=pkaufjahr;
     }
     // getter und setter
     public void setname(String pname){
@@ -25,8 +26,22 @@ public class Spiel {
     public String getname(){
         return name;
     }
-    public void setkaufjahr(int pkaufjahr){
-        kaufjahr = pkaufjahr;
+    public boolean getkaufjahrfestgelegt(){
+        return kaufjahrvorhanden;
+    }
+    public boolean getspielstundenfestgelegt(){
+        return spielstudnengelegt;
+    }
+    public void setkaufjahr(){
+        String yesONo;
+        System.out.println("Geben sie ihr Kaufjahr ein falls sie es nicht wissen geben sie x ein");
+        yesONo = Read.string();
+        if(yesONo.equals("x")){
+            System.out.println("Es wurde kein Spieljahr gespeichert");
+        } else{
+            kaufjahr = Integer.valueOf(yesONo);
+            kaufjahrvorhanden= true;
+        }
     }
     public int getkaufjahr(){
         return kaufjahr;
@@ -35,23 +50,30 @@ public class Spiel {
         return spielstunden;
     }
     public void setspiezeit(){
-    System.out.println("Bitte gib deine Spielstunden ein");
-    spielstunden = Read.dezi();
+        System.out.println("bitte geben sie ihre Spielzeit aus ein,");
+        System.out.println("Falls sie das nicht wissen geben sie x ein");
+    String yesONo =Read.string();
+    if(yesONo.equals("x")){
+        System.out.println("Es wurde keine Spielzeit gespeichert");
+    }else{
+    spielstunden = Double.valueOf(yesONo);
+    spielstudnengelegt = true;
     if(spielstunden>99999){
         System.out.println("Ihre Spielstunden überschreiten unser Maximum,");
         System.out.println("Ihre Spielstunden wurdne jetzt uf 99.999 gesetzt");
+        }
     }
     }
     public Errungenschaft errungenschaftanlegen(){
         System.out.println("Geben Sie den namen der Errungenschaft ein");
         String pname= Read.string();
-        System.out.println("Geben Sie das Jahr der Errungenschaft ein");
-        int pjahr = Read.number();
-        Errungenschaft pErrungenschaft = new Errungenschaft(pname, pjahr);
+        
+        Errungenschaft pErrungenschaft = new Errungenschaft(pname);
         return pErrungenschaft;
     }
     public void errungenschaftfestlegen(){
         errungenschaft[counter] = errungenschaftanlegen();
+        errungenschaft[counter].setjahr();
         counter++;
     }
     public Bewertung bewertunganlegen(){
@@ -81,7 +103,8 @@ public class Spiel {
         int b = 0;
       while (b<counter){
         System.out.println(errungenschaft[b].getname());
-        System.out.println(errungenschaft[b].getjahr());
+        if(errungenschaft[b].getjahrfestgelegt()==true){
+        System.out.println(errungenschaft[b].getjahr());}
         b++;
       }
     }
