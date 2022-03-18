@@ -2,7 +2,8 @@
 public class Spiel {
   
     private String name;
-    int counter;
+    private double spielstunden;
+    private int counter;
     //Wir wollen die Errungenschaften in Spiel erstellen
     private Errungenschaft[] errungenschaft = new Errungenschaft[10];
     private Bewertung bewertung;
@@ -29,6 +30,17 @@ public class Spiel {
     }
     public int getkaufjahr(){
         return kaufjahr;
+    }
+    public double getspielzeit(){
+        return spielstunden;
+    }
+    public void setspiezeit(){
+    System.out.println("Bitte gib deine Spielstunden ein");
+    spielstunden = Read.dezi();
+    if(spielstunden>99999){
+        System.out.println("Ihre Spielstunden überschreiten unser Maximum,");
+        System.out.println("Ihre Spielstunden wurdne jetzt uf 99.999 gesetzt");
+    }
     }
     public Errungenschaft errungenschaftanlegen(){
         System.out.println("Geben Sie den namen der Errungenschaft ein");
@@ -62,6 +74,9 @@ public class Spiel {
     }
     }
     public void errungenschaftenausgeben(){
+        if(counter == 0){
+            System.out.println("Sie haben für dieses Spiel keine Errungenschaft");
+        }else{
         System.out.println("Für dieses Spiel haben Sie folgende errungenschaften");
         int b = 0;
       while (b<counter){
@@ -69,6 +84,7 @@ public class Spiel {
         System.out.println(errungenschaft[b].getjahr());
         b++;
       }
+    }
         System.out.println();
     }
     public void bewertungausgeben(){
@@ -82,6 +98,21 @@ public class Spiel {
         int level = Read.number();
         Abzeichen pabzeichen = new Abzeichen(level);
         return pabzeichen;
+    }
+    public void abzeichenscann(){
+        boolean l= false;
+        while (l==false){
+            abzeichen =abzeichenanlegen();
+            if(abzeichen.getlevel()<7){
+                if (abzeichen.getlevel()>0){
+                    l = true;
+                }else {
+                    System.out.println("Ihr Abzeichen Level muss mindestens 1 sein bitte versuchen Sie es nochmal");
+                }
+            }else{
+                System.out.println("Ihr Abzeichen Level darf maximal 6 betragen versuchen sie es bitte erneut");
+            }
+        }
     }
 
     public void abzeichenscanner(){

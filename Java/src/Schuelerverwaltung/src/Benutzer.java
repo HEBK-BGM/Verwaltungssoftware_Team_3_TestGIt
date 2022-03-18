@@ -10,7 +10,6 @@ public class Benutzer extends Person{
     public void änderePasswort(String pPasswort){
         passwort = pPasswort;
     }
-
     public Benutzer(String pNutzername, int pAlter, String pPasswort){
         super(pAlter);
         passwort=pPasswort;
@@ -25,7 +24,8 @@ public class Benutzer extends Person{
     }
     //Anmelde Funktion relativ simpel eigentlich genau so wie die while schleife in regestriere in menuefuehrung
     public boolean anmeldung(){
-    
+        Read.line();
+    System.out.println("Bitte geben sie ihre Benutzerdaten ein");
         
         while (angemeldet ==false) {
             System.out.println("Bitte gib deinen Benutzernamen ein");
@@ -61,12 +61,13 @@ public class Benutzer extends Person{
         int pKaufjahr = Read.number();
         Spiel pSpiel = new Spiel(pName, pKaufjahr);
         return pSpiel;
+
     }
 
 
     public void spielfestlegen(){
         spiel[counter] = spielanlegen();
-
+        spiel[counter].setspiezeit();
         counter++;
         
     }
@@ -91,20 +92,26 @@ public class Benutzer extends Person{
         return Read.number();
     }
     public void spielemenue(){
-        int spielnumber= menueanzeigen();
-        switch(spielemenueanzeigen()){
-            case 1: spiel[spielnumber].errungenschaftfestlegen(); break;
-            case 2: spiel[spielnumber].bewertungscanner(); break;
-            case 3: spiel[spielnumber].abzeichenscanner(); break;
+        if(counter!=0){
+            int spielnumber= menueanzeigen();
+            switch(spielemenueanzeigen()){
+                case 1: spiel[spielnumber].errungenschaftfestlegen(); break;
+                case 2: spiel[spielnumber].bewertungscanner(); break;
+                case 3: spiel[spielnumber].abzeichenscanner(); break;
+            }
+        }else {
+            System.out.println("Legen sie zuerst ein Spiel an");
         }
     }
     public void spieleUswAusgeben(){
         for (int i = 0; i < counter; i++){
+            Read.line();
             System.out.println(spiel[i].getname());
+            System.out.println("Kaufjahr:"+spiel[i].getkaufjahr());
+            System.out.println("Spielstuden:"+spiel[i].getspielzeit());
             spiel[i].errungenschaftenausgeben();
             spiel[i].bewertungausgeben();
             spiel[i].abzeichenausgeben();
-         
         }
     }
 }

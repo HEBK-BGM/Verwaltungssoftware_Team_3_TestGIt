@@ -9,7 +9,7 @@ public class MenueFuehrung {
     public Benutzer regestriere() {
         int b = 1;
 
-    
+        System.out.println("Bitte regesrieren sie sich");
         System.out.println("Gib den Benutzernamen ein");
         String pBenutzername =Read.string();
         System.out.println("Gib das Passwort ein");
@@ -66,7 +66,7 @@ public class MenueFuehrung {
     // Ausführung der Befehle von darüber ist auch akutell noch unwichtig
     public void zeigeMenue(Benutzer pBenutzer){
         while(pBenutzer.getAngemeldet() == true){
-            System.out.println("-----------");
+            Read.line();
             switch(start()){
                 case 1: pBenutzer.spielfestlegen();
                         break;
@@ -77,15 +77,26 @@ public class MenueFuehrung {
                         break;
                 default: System.out.println("Bitte eingabe wiederholen");
             }   
+            abmeldungMenue(pBenutzer);
         }
-    
-            
-       
-       
-        
-
-
-
+    }
+    public int anmeldenOderRegestrieren(){
+        System.out.println("Sie wurden abgemeldet sie haben jetzt folgende Möglichkeiten:");
+        System.out.println("(1) Anmelden");
+        System.out.println("(2) Account Daten überschreiben");
+        System.out.println("(3) Programm beenden");
+        return Read.number();
+    }
+    public void abmeldungMenue(Benutzer pBenutzer){
+        while(pBenutzer.getAngemeldet() == false){
+            Read.line();
+            switch (anmeldenOderRegestrieren()){
+                case 1: pBenutzer.anmeldung(); break;
+                case 2: pBenutzer = regestriere(); break;
+                case 3: System.exit(1); break;
+                default: System.out.println("Bitte eingabe wiederholen");
+            }
+        }
     }
 }
   
