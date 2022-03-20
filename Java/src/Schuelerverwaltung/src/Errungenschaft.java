@@ -19,14 +19,23 @@ public class Errungenschaft {
         return jahr;
     }
     public void setjahr(){
-        System.out.println("Geben sie das Jahr der Errungenschaft ein");
-        System.out.println("Wenn sie das nicht wissen geben sie bitte x ein");
-        String yesONo = Read.string();
-        if (yesONo.equals("x")){
-            System.out.println("Sie haben kein Jahr angegeben");
-        }else{
-            jahr = Integer.valueOf(yesONo);
-            jahrfestglegt = true;
+        boolean x = false;
+        while (x==false){
+            String yesONo;
+            System.out.println("Geben sie das Jahr der Errungenschaft ein falls sie es nicht wissen geben sie x ein");
+            yesONo = Read.string();
+            if(yesONo.equals("x")){
+                System.out.println("Es wurde kein Jahr gespeichert");
+                x=true;
+            } else{
+                if(Read.ueberpruefeNumber(yesONo)==true){
+                    jahr = Integer.valueOf(yesONo);
+                    jahrfestglegt = true;
+                    x=true;
+                }else{
+                    System.out.println("Eingabe muss x oder eine Zahl sein");
+                }
+            }
         }
     }
 }
