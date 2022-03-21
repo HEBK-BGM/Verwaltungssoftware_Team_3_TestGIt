@@ -6,9 +6,6 @@ public class Errungenschaft {
         name=pname;
         jahr=pjahr;
     }
-    public void setname(String pname){
-        name = pname;
-    }
     public String getname(){
         return name;
     }
