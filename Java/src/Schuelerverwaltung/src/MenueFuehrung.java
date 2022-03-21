@@ -9,7 +9,7 @@ public class MenueFuehrung {
     public Benutzer regestriere() {
         int b = 1;
 
-    
+        System.out.println("Bitte regesrieren sie sich");
         System.out.println("Gib den Benutzernamen ein");
         String pBenutzername =Read.string();
         System.out.println("Gib das Passwort ein");
@@ -36,9 +36,9 @@ public class MenueFuehrung {
     }
        
         System.out.println("Gib dein Alter ein");
-        int pAlter = Read.number();
-       
-
+        int pAlter = Read.noString("Bitte versuch es erneut, gib dien Alter ein");
+       System.out.println("Sie sind jetzt regestriert");
+       Read.absatz();
         
        //dadurch wird der Benutzer der oben in der Methode angegeben wird implementiert
             
@@ -53,20 +53,20 @@ public class MenueFuehrung {
     }
     // Das ist dafür dass mann wenn man angemeldet ist soll das dafür verwendet werden hat bisher keinen tieferen Sinn wird aber süäter wichtig
     public int start(){
-        System.out.println("");
+        Read.absatz();
         System.out.println("Wählen Sie aus:");
         System.out.println(" (1) Spiel anlegen:");
         System.out.println(" (2) Alle Spiele anzeigen:");
         System.out.println(" (3) Spiele Verwalten");
         System.out.println(" (4) Abmelden");
                
-        return Read.number();
+        return Read.numberOSchleife();
     } 
 
     // Ausführung der Befehle von darüber ist auch akutell noch unwichtig
     public void zeigeMenue(Benutzer pBenutzer){
         while(pBenutzer.getAngemeldet() == true){
-            System.out.println("-----------");
+            Read.line();
             switch(start()){
                 case 1: pBenutzer.spielfestlegen();
                         break;
@@ -77,15 +77,33 @@ public class MenueFuehrung {
                         break;
                 default: System.out.println("Bitte eingabe wiederholen");
             }   
+            abmeldungMenue(pBenutzer);
         }
-    
-            
-       
-       
+    }
+    public int anmeldenOderRegestrieren(){
+        System.out.println("Sie wurden abgemeldet sie haben jetzt folgende Möglichkeiten:");
+        System.out.println("(1) Anmelden");
+        System.out.println("(2) Account Daten überschreiben");
+        System.out.println("(3) Programm beenden");
+        return Read.numberOSchleife();
+    }
+    public void abmeldungMenue(Benutzer pBenutzer){
+        while(pBenutzer.getAngemeldet() == false){
+            Read.line();
+            switch (anmeldenOderRegestrieren()){
+                case 1: pBenutzer.anmeldung(); break;
+                case 2: datenueberschreiben(pBenutzer); break;
+                case 3: System.exit(1); break;
+                default: System.out.println("Bitte eingabe wiederholen");
+            }
+        }
+    }
+    public void datenueberschreiben(Benutzer pBenutzer){
+        pBenutzer.setbenutzername();
+        pBenutzer.setpasswort();
+        System.out.println("Bitte gib dein Alter ein");
+        pBenutzer.setAlter(Read.noString("Bitte versuch es erneut, gib dein Alter ein"));
         
-
-
-
     }
 }
   
