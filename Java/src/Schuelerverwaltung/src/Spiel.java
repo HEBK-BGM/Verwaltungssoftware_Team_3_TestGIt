@@ -9,7 +9,7 @@ public class Spiel {
     private Bewertung bewertung;
     private int kaufjahr;
     private boolean bewertet = false;
-    private boolean spielstudnengelegt = false;
+    private boolean spielstundengelegt = false;
     private Abzeichen abzeichen;
     private boolean kaufjahrvorhanden = false;
     private boolean abzeichenbestimmt = false;
@@ -31,16 +31,17 @@ public class Spiel {
         return kaufjahrvorhanden;
     }
     public boolean getspielstundenfestgelegt(){
-        return spielstudnengelegt;
+        return spielstundengelegt;
     }
     public void setkaufjahr(){
+        if (kaufjahrvorhanden==false){
         boolean x = false;
         while (x==false){
             String yesONo;
-            System.out.println("Geben sie ihr Kaufjahr ein falls sie es nicht wissen geben sie x ein");
+            System.out.println("Gib das Jahr das Kaufjahr ein, falls du es nicht weißt oder nicht eingeben möchtest gib x ein");
             yesONo = Read.string();
             if(yesONo.equals("x")){
-                System.out.println("Es wurde kein Spieljahr gespeichert");
+                System.out.println("Es wurde kein Kaufjahr gespeichert");
                 x=true;
             } else{
                 if(Read.ueberpruefeNumber(yesONo)==true){
@@ -52,6 +53,9 @@ public class Spiel {
                 }
             }
         }
+        }else{
+            System.out.println("Für dieses Spiel wurde bereits ein Kaufjahr festgelegt");
+        }
     }
     public int getkaufjahr(){
         return kaufjahr;
@@ -60,31 +64,35 @@ public class Spiel {
         return spielstunden;
     }
     public void setspiezeit(){
+        if (spielstundengelegt=true){
         boolean x = false;
         while (x==false){
-            System.out.println("bitte geben sie ihre Spielzeit ein");
-            System.out.println("Falls sie das nicht wissen geben sie x ein");
+            System.out.println("Gib deine Spielzeit ein, falls du sie nicht weißt oder nicht eingeben möchtest gib x ein");
+       
             String yesONo =Read.string();
             if(yesONo.equals("x")){
                 System.out.println("Es wurde keine Spielzeit gespeichert");
                 x = true;
             }else{
-                if(Read.ueberpruefeNumber(yesONo)==true){
+                if(Read.ueberpruefeDouble(yesONo)==true){
                     spielstunden = Double.valueOf(yesONo);
-                    spielstudnengelegt = true;
+                    spielstundengelegt = true;
                     x=true;
                     if(spielstunden>99999){
-                        System.out.println("Ihre Spielstunden überschreiten unser Maximum,");
-                        System.out.println("Ihre Spielstunden wurdne jetzt uf 99.999 gesetzt");
+                        System.out.println("Deine Spielstunden überschreiten unser Maximum,");
+                        System.out.println("Deine Spielstunden wurden jetzt auf 99.999 gesetzt");
                     }
                 }else{
-                    System.out.println("Es wurde weder x noch eine Zahl eigegeben versuche es erneut");
+                    System.out.println("Es wurde weder x noch eine Zahl eigegeben, versuche es erneut");
                 }
             }
         }
+        }else{
+            System.out.println("Für dieses Spiel wurde bereits eine Spielzeit festgelegt");
+        }
     }
     public Errungenschaft errungenschaftanlegen(){
-        System.out.println("Geben Sie den namen der Errungenschaft ein");
+        System.out.println("Gib den Namen der Errungenschaft ein");
         String pname= Read.string();
         
         Errungenschaft pErrungenschaft = new Errungenschaft(pname);
@@ -99,16 +107,16 @@ public class Spiel {
         boolean l= false;
         int bewertugnszahl = 0;
         while (l==false){
-            System.out.println("Bitte geben sie ihre Bewertung (1-5) ein");
+            System.out.println("Bitte gib eine Bewertung (1-5) ein");
             bewertugnszahl = Read.numberOSchleife();
             if(bewertugnszahl<6){
                 if (bewertugnszahl>0){
                     l = true;
                 }else {
-                    System.out.println("Ihre Bewertung muss zwischen 1 und 5 liegen");
+                    System.out.println("Deine Bewertung muss zwischen 1 und 5 liegen");
                 }
             }else{
-                System.out.println("Ihre Bewertung muss zwischen 1 und 5 liegen");
+                System.out.println("Deine Bewertung muss zwischen 1 und 5 liegen");
             }
         }
 
@@ -136,21 +144,22 @@ public class Spiel {
         if(counter == 0){
             System.out.println("Sie haben für dieses Spiel keine Errungenschaft");
         }else{
-        System.out.println("Für dieses Spiel haben Sie folgende errungenschaften");
-        int b = 0;
-      while (b<counter){
-        System.out.println(errungenschaft[b].getname());
-        if(errungenschaft[b].getjahrfestgelegt()==true){
-        System.out.println(errungenschaft[b].getjahr());}
-        b++;
-      }
-    }
-        System.out.println();
+            System.out.println("Für dieses Spiel haben Sie folgende errungenschaften");
+            int b = 0;
+            while (b<counter){
+                System.out.println("Errungenschaft-Name: " + errungenschaft[b].getname());
+                if(errungenschaft[b].getjahrfestgelegt()==true){
+                    System.out.println("Errungenschaft-Jahr: " + errungenschaft[b].getjahr());
+                }
+                b++;
+            }
+        }
+        Read.absatz();
     }
     public void bewertungausgeben(){
         if (bewertet==true){
-            System.out.println(bewertung.getBewertung());
-            System.out.println(bewertung.getBewertungstext());
+            System.out.println("Bewertung: "+ bewertung.getBewertung());
+            System.out.println("Bewertungstext:" + bewertung.getBewertungstext());
         }
     }
     public Abzeichen abzeichenanlegen(){
@@ -186,7 +195,7 @@ public class Spiel {
     }
     public void abzeichenausgeben(){
         if (abzeichenbestimmt==true){
-            System.out.println(abzeichen.getlevel());
+            System.out.println("Abzeichenlevel: "+abzeichen.getlevel());
         }
     }
 }

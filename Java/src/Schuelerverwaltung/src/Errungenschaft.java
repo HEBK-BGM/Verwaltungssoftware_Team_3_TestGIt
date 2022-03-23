@@ -22,11 +22,12 @@ public class Errungenschaft {
         boolean x = false;
         while (x==false){
             String yesONo;
-            System.out.println("Geben sie das Jahr der Errungenschaft ein falls sie es nicht wissen geben sie x ein");
+            System.out.println("Gib das Jahr der Errungenschaft ein, falls du es nicht weißt oder nicht eingeben möchtest gib x ein");
             yesONo = Read.string();
             if(yesONo.equals("x")){
                 System.out.println("Es wurde kein Jahr gespeichert");
                 x=true;
+                jahrfestglegt=true;
             } else{
                 if(Read.ueberpruefeNumber(yesONo)==true){
                     jahr = Integer.valueOf(yesONo);

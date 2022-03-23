@@ -4,11 +4,15 @@ private static Scanner sc = new Scanner(System.in);
 
 
     public static String string(){
-        return sc.nextLine();
+        String a = sc.nextLine();
+        if (a.equals("EXIT")){
+            System.exit(1);
+        }
+        return a;
     }
   
     public static double dezi(){
-        return Double.valueOf(sc.nextLine());
+        return Double.valueOf(string());
     }
     public static void line(){
         System.out.println("-----------");
@@ -21,7 +25,7 @@ private static Scanner sc = new Scanner(System.in);
         int a = 0;
         while (b==1){
             try{
-                a = Integer.parseInt(sc.nextLine()); 
+                a = Integer.parseInt(string()); 
                 b--;
             }catch(NumberFormatException ex){
                 System.out.println(s);
@@ -34,10 +38,18 @@ private static Scanner sc = new Scanner(System.in);
         int a = 100;
        
             try{
-                a = Integer.parseInt(sc.nextLine()); 
+                a = Integer.parseInt(string()); 
             }catch(NumberFormatException ex){
             }
         return a;
+    }
+    public static boolean ueberpruefeDouble(String c){
+        try{
+            Double.parseDouble(c); 
+            return true;
+        }catch(NumberFormatException ex){
+            return false;
+        }
     }
     public static boolean ueberpruefeNumber(String c){
        

@@ -6,33 +6,33 @@ public class Benutzer extends Person{
     private boolean angemeldet = false;
     private int counter= 0;
     private Spiel[] spiel = new Spiel[10];
-    // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen
-    public void änderePasswort(String pPasswort){
-        passwort = pPasswort;
-    }
-    
+    // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
     public Benutzer(String pNutzername, int pAlter, String pPasswort){
         super(pAlter);
         passwort=pPasswort;
         benutzername=pNutzername;
-
+    }
+    public void setangemeldet(boolean pangemeldet){
+        angemeldet= pangemeldet;
+    }
+    public boolean getAngemeldet(){
+        return angemeldet;
     }
     public void setbenutzername(){
-        System.out.println("Bitte geben sie ihren neuen Benutzernamen ein");
+        System.out.println("Bitte gib deinen Benutzernamen ein");
         benutzername = Read.string();
     }
+
     public void setpasswort(){
-        System.out.println("Bitte geben sie ihr Passwort ein");
+        System.out.println("Bitte gib dein Passwort ein");
         String pPasswort = Read.string();
 
-        System.out.println("Gib das Passwort erneut ein");
+        System.out.println("Bitte wiederhole das Passwort");
         String pPasswort2 = Read.string();
         int b=1;
        //Passwörter werden verglichen das darüber muss aber dennoch da sein damit der STrin erstellt wird
         while (b==1) {
-
-  
-       
+            
             if (pPasswort2.equals(pPasswort)) {
                 b--;
                 passwort = pPasswort;
@@ -47,16 +47,11 @@ public class Benutzer extends Person{
             }
         }
     }
-    public void setangemeldet(boolean pangemeldet){
-        angemeldet= pangemeldet;
-    }
-    public boolean getAngemeldet(){
-        return angemeldet;
-    }
+
     //Anmelde Funktion relativ simpel eigentlich genau so wie die while schleife in regestriere in menuefuehrung
     public boolean anmeldung(){
         Read.line();
-    System.out.println("Bitte geben sie ihre Benutzerdaten ein");
+    System.out.println("Melde dich bitte an");
         
         while (angemeldet ==false) {
             System.out.println("Bitte gib deinen Benutzernamen ein");
@@ -69,15 +64,15 @@ public class Benutzer extends Person{
                 if (pBenutzername.equals(benutzername)){
                     //beides richtig = true
                     angemeldet = true;
-                    System.out.println("Anmeldedaten sind richtig sie sind jetzt angemeldet");
+                    System.out.println("Anmeldedaten sind richtig, du bist jetzt angemeldet");
                 } //wennn eines von beiden falsch ist dann passiert das
                 else {
-                    System.out.println("Anmeldedaten sind falsch bitte versuche es erneut");
+                    System.out.println("Anmeldedaten sind falsch, bitte versuche es erneut");
                   
                      angemeldet=false;
                  }
                 } else {
-               System.out.println("Anmeldedaten sind falsch bitte versuche es erneut");
+               System.out.println("Anmeldedaten sind falsch, bitte versuche es erneut");
              
                 angemeldet=false;
             }
@@ -105,25 +100,27 @@ public class Benutzer extends Person{
         
     }
     public void spieleanzeigen(){
-        System.out.println("bitte wähle ein spiel aus");
+        System.out.println("Bitte wähle ein Spiel aus");
         for (int i = 0; i < counter; i++){
-            System.out.println(spiel[i].getname()+ "("+i+")");
+            System.out.println(spiel[i].getname()+ " ("+i+")");
         }
     }
     public int menueanzeigen(){
         spieleanzeigen();
-        System.out.println("zurück ("+counter+")");
+        System.out.println("Zurück ("+counter+")");
         System.out.println("Welches Spiel wählst du?");
         int gamenumber = Read.numberOSchleife();
       return gamenumber;
     }
     public int spielemenueanzeigen(int i){
-        System.out.println("Wählenn sie aus");
+        System.out.println("Wähle aus:");
         System.out.println("Errungenschaft anlegen (1)");
-        System.out.println("Bewrtung anlegen (2)");
-        System.out.println("Abzeichenleven festlegen (3)");
-        System.out.println("zurück (4)");
-        System.out.println("Hauptmenü (5)");
+        System.out.println("Bewertung anlegen (2)");
+        System.out.println("Abzeichenlevel festlegen (3)");
+        System.out.println("Kaufjahr festlegen (4)");
+        System.out.println("Spielzeit festlegen (5)");
+        System.out.println("Zurück (6)");
+        System.out.println("Hauptmenü (7)");
         return Read.numberOSchleife();
     }
     public void spielemenue(){
@@ -140,9 +137,11 @@ public class Benutzer extends Person{
                     case 1: spiel[spielnumber].errungenschaftfestlegen();a=1;b=1; break;
                     case 2: spiel[spielnumber].bewertungscanner();a=1;b=1; break;
                     case 3: spiel[spielnumber].abzeichenscanner();a=1;b=1; break;
-                    case 4: a=1; break;
-                    case 5: a=1; b=1; break;
-                    default: System.out.println("Bitte geben Sie eien der Zahlen ein");
+                    case 4: spiel[spielnumber].setkaufjahr();a=1;b=1;break;
+                    case 5: spiel[spielnumber].setspiezeit(); a=1;b=1;break;
+                    case 6: a=1; break;
+                    case 7: a=1; b=1; break;
+                    default: System.out.println("Bitte wähle eine der oben stehende Optionen aus");
                 }
             }
             }
@@ -156,7 +155,7 @@ public class Benutzer extends Person{
             }   
             }
         }else {
-            System.out.println("Legen sie zuerst ein Spiel an");
+            System.out.println("Lege zuerst ein Spiel an");
         }
     }
     public void spieleUswAusgeben(){
@@ -166,7 +165,7 @@ public class Benutzer extends Person{
             if(spiel[i].getkaufjahrfestgelegt()==true){
             System.out.println("Kaufjahr:"+spiel[i].getkaufjahr());}
             if(spiel[i].getspielstundenfestgelegt()==true){
-            System.out.println("Spielstudnen:"+spiel[i].getspielzeit());}
+            System.out.println("Spielstunden:"+spiel[i].getspielzeit());}
             spiel[i].errungenschaftenausgeben();
             spiel[i].bewertungausgeben();
             spiel[i].abzeichenausgeben();
