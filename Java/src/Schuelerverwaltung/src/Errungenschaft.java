@@ -9,9 +9,6 @@ public class Errungenschaft {
     public boolean getjahrfestgelegt(){
         return jahrfestglegt;
     }
-    public void setname(String pname){
-        name = pname;
-    }
     public String getname(){
         return name;
     }
