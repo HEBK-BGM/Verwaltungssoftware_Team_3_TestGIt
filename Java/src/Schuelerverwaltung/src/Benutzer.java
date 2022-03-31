@@ -3,8 +3,10 @@
 public class Benutzer extends Person{
     private String passwort;
     private String benutzername;
+    //Ist dazu gut dass wir wissen ob er angemeldet sind
     private boolean angemeldet = false;
     private int counter= 0;
+    private Fieldcommands fieldcommands = new Fieldcommands();
     private Spiel[] spiel = new Spiel[10];
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
     public Benutzer(String pNutzername, int pAlter, String pPasswort){
@@ -12,6 +14,8 @@ public class Benutzer extends Person{
         passwort=pPasswort;
         benutzername=pNutzername;
     }
+
+    //getter und setter
     public void setangemeldet(boolean pangemeldet){
         angemeldet= pangemeldet;
     }
@@ -24,6 +28,7 @@ public class Benutzer extends Person{
     }
 
     public void setpasswort(){
+        //Beim setten vom Passwort wird eben verglichen ob beide Passwörter richtig ist
         System.out.println("Bitte gib dein Passwort ein");
         String pPasswort = Read.string();
 
@@ -119,8 +124,9 @@ public class Benutzer extends Person{
         System.out.println("Abzeichenlevel festlegen (3)");
         System.out.println("Kaufjahr festlegen (4)");
         System.out.println("Spielzeit festlegen (5)");
-        System.out.println("Zurück (6)");
-        System.out.println("Hauptmenü (7)");
+        System.out.println("Spiellöschen (6)");
+        System.out.println("Zurück (7)");
+        System.out.println("Hauptmenü (8)");
         return Read.numberOSchleife();
     }
     public void spielemenue(){
@@ -139,8 +145,9 @@ public class Benutzer extends Person{
                     case 3: spiel[spielnumber].abzeichenscanner();a=1;b=1; break;
                     case 4: spiel[spielnumber].setkaufjahr();a=1;b=1;break;
                     case 5: spiel[spielnumber].setspiezeit(); a=1;b=1;break;
-                    case 6: a=1; break;
-                    case 7: a=1; b=1; break;
+                    case 6: a=1; b=1; spieleLoeschenmenue(spielnumber); break;
+                    case 7: a=1; break;
+                    case 8: a=1; b=1; break;
                     default: System.out.println("Bitte wähle eine der oben stehende Optionen aus");
                 }
             }
@@ -158,6 +165,26 @@ public class Benutzer extends Person{
             System.out.println("Lege zuerst ein Spiel an");
         }
     }
+    public void spieleLoeschenmenue(int a){
+        int i=0;
+        while (i==0){
+        System.out.println("Bist du dir sicher dass du das Spiel löschen willst?");
+       switch(String.valueOf(Read.booleanx())){
+           case "true": spieleloeschen(a);i =1;
+           case "false": i=1;
+            }
+       }
+        
+    }
+    public void spieleloeschen(int zahl){
+        spiel[zahl]= null;
+        while(zahl<counter){
+            spiel[zahl]=spiel[zahl+1];
+            zahl++;
+        }
+        spiel[counter]= null;
+        counter--;
+    }
     public void spieleUswAusgeben(){
         for (int i = 0; i < counter; i++){
             Read.line();
@@ -170,6 +197,9 @@ public class Benutzer extends Person{
             spiel[i].bewertungausgeben();
             spiel[i].abzeichenausgeben();
         }
+    }
+    public void menue(){
+        fieldcommands.menue();
     }
 }
 

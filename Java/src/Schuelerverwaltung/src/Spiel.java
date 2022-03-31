@@ -34,15 +34,19 @@ public class Spiel {
         return spielstundengelegt;
     }
     public void setkaufjahr(){
+        //hier wird ueberpruft ob x eingegeben wurde oder ob es iene zahhl ist wenn beides nicht geht wird es wiederholt
         if (kaufjahrvorhanden==false){
+            // x ist ob die funtkion funktioniert so lange die eingaben nicht x oder eine zahl ist ist der boolean x false
         boolean x = false;
         while (x==false){
             String yesONo;
             System.out.println("Gib das Jahr das Kaufjahr ein, falls du es nicht weißt oder nicht eingeben möchtest gib x ein");
             yesONo = Read.string();
+            //ueberpruefe x
             if(yesONo.equals("x")){
                 System.out.println("Es wurde kein Kaufjahr gespeichert");
                 x=true;
+                //ueberpruefe auf number wenn das nicht geht wird wiederholt
             } else{
                 if(Read.ueberpruefeNumber(yesONo)==true){
                     kaufjahr = Integer.valueOf(yesONo);
@@ -53,16 +57,19 @@ public class Spiel {
                 }
             }
         }
+        //Falls ein Kaufjahr bereits festgelegt wurde kann man das nicht festlegen ist dazu gut dass falls man x eingegeben hat man noch im nachhinein andern kann
         }else{
             System.out.println("Für dieses Spiel wurde bereits ein Kaufjahr festgelegt");
         }
     }
+
     public int getkaufjahr(){
         return kaufjahr;
     }
     public double getspielzeit(){
         return spielstunden;
     }
+    //das gleiche wie bei kaufjahr nur mit double und dem add on dass es nicht ueber 99.999 sein kann 
     public void setspiezeit(){
         if (spielstundengelegt=true){
         boolean x = false;
@@ -78,6 +85,7 @@ public class Spiel {
                     spielstunden = Double.valueOf(yesONo);
                     spielstundengelegt = true;
                     x=true;
+                    // hier wird das maximum festgelegt
                     if(spielstunden>99999){
                         System.out.println("Deine Spielstunden überschreiten unser Maximum,");
                         System.out.println("Deine Spielstunden wurden jetzt auf 99.999 gesetzt");
@@ -197,5 +205,51 @@ public class Spiel {
         if (abzeichenbestimmt==true){
             System.out.println("Abzeichenlevel: "+abzeichen.getlevel());
         }
+    }
+    public int errungenschaftenausgebenfuerloeschen(){
+        if(counter == 0){
+            System.out.println("Sie haben für dieses Spiel keine Errungenschaft");
+        }else{
+            System.out.println("Für dieses Spiel haben Sie folgende errungenschaften, wählen sie eine aus");
+            int b = 0;
+            while (b<counter){
+                System.out.println("Errungenschaft-Name: " + errungenschaft[b].getname()+"("+b+")");
+                b++;
+            }
+        }
+        int a =0;
+        while(a==0){
+        int i = Read.number();
+        if(i<counter){
+            a++;
+           return i; 
+           
+        }else{
+            System.out.println("ungülige Eingabe");
+        }
+        }
+        return 0;
+    }
+    public void spieleLoeschenmenue(int a){
+        a = errungenschaftenausgebenfuerloeschen();
+        int i=0;
+        while (i==0){
+        System.out.println("Bist du dir sicher dass du diese Errungenschaft löschen willst?");
+       switch(String.valueOf(Read.booleanx())){
+           case "true": errungenschaftenloeschen(a);i =1;
+           case "false": i=1;
+            }
+       }
+        
+    }
+    public void errungenschaftenloeschen(int zahl){
+        errungenschaft[zahl]= null;
+        while(zahl<counter){
+            errungenschaft[zahl]=errungenschaft[zahl+1];
+            zahl++;
+        }
+        errungenschaft[counter]= null;
+        counter--;
+    
     }
 }
