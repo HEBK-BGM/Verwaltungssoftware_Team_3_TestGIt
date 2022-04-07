@@ -1,18 +1,20 @@
+import java.io.Serializable;
+
 //Sinn der Klasse ist selbsterklärend der rEst muss geschaut werden
-public class Spiel {
+public class Spiel implements Serializable{
   
-    private String name;
-    private double spielstunden;
-    private int counter;
+     String name;
+     double spielstunden;
+     int counter;
     //Wir wollen die Errungenschaften in Spiel erstellen
-    private Errungenschaft[] errungenschaft = new Errungenschaft[10];
-    private Bewertung bewertung;
-    private int kaufjahr;
-    private boolean bewertet = false;
-    private boolean spielstundengelegt = false;
-    private Abzeichen abzeichen;
-    private boolean kaufjahrvorhanden = false;
-    private boolean abzeichenbestimmt = false;
+     Errungenschaft[] errungenschaft = new Errungenschaft[10];
+     Bewertung bewertung;
+     int kaufjahr;
+     boolean bewertet = false;
+     boolean spielstundengelegt = false;
+     Abzeichen abzeichen;
+     boolean kaufjahrvorhanden = false;
+     boolean abzeichenbestimmt = false;
     public Bewertung getBewertung() {
         return bewertung;
     }

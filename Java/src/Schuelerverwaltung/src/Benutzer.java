@@ -1,8 +1,18 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.NotSerializableException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.sql.Date;
 
-
-public class Benutzer extends Person{
+public class Benutzer extends Person implements Serializable{
     private String passwort;
     private String benutzername;
+    DatenSpeicher datenSpeicher = new DatenSpeicher();
     //Ist dazu gut dass wir wissen ob er angemeldet sind
     private boolean angemeldet = false;
     private int counter= 0;
@@ -201,5 +211,112 @@ public class Benutzer extends Person{
     public void menue(){
         fieldcommands.menue();
     }
+
+    public void saveSpiele() {
+
+        for (int i = 0; i < 10; i++) {
+
+            if (spiel[i] != null) {
+
+                datenSpeicher.spiel[i] = new Spiel("");
+
+                datenSpeicher.spiel[i].name = spiel[i].name;
+
+                datenSpeicher.spiel[i].spielstunden = spiel[i].spielstunden;
+
+                datenSpeicher.spiel[i].counter = spiel[i].counter;
+
+                for (int v = 0; v<10;v++){
+                    if (spiel[i].errungenschaft[v] != null){
+                        datenSpeicher.spiel[i].errungenschaft[v] = spiel[i].errungenschaft[v];
+                    }
+                }
+
+                datenSpeicher.spiel[i].bewertung = spiel[i].bewertung;
+
+                datenSpeicher.spiel[i].kaufjahr = spiel[i].kaufjahr;
+
+                datenSpeicher.spiel[i].bewertet= spiel[i].bewertet;
+
+                datenSpeicher.spiel[i].spielstundengelegt = spiel[i].spielstundengelegt;
+
+                datenSpeicher.spiel[i].abzeichen = spiel[i].abzeichen;        
+
+                datenSpeicher.spiel[i].kaufjahrvorhanden = spiel[i].kaufjahrvorhanden;  
+
+                datenSpeicher.spiel[i].abzeichenbestimmt = spiel[i].abzeichenbestimmt;            
+
+            
+            }
+
+        }
+
+    }
+    
+
+    public void saveData() {
+
+        try {
+            FileOutputStream f = new FileOutputStream("ver.dat");
+
+            BufferedOutputStream b = new BufferedOutputStream(f);
+
+            ObjectOutputStream o = new ObjectOutputStream(b);
+
+            datenSpeicher.benutzername = benutzername;
+
+            datenSpeicher.passwort = passwort;
+
+            saveSpiele();
+
+            o.writeObject(datenSpeicher);
+
+            o.close();
+
+
+        } catch (IOException d) {
+
+            d.printStackTrace();
+
+        } 
+
+    }
+
+    public void loadData(){
+        try {
+
+            FileInputStream f2 = new FileInputStream("ver.dat");
+
+            BufferedInputStream b2 = new BufferedInputStream(f2);
+
+            ObjectInputStream obj2 = new ObjectInputStream(b2);
+
+            DatenSpeicher datenSpeicher= (DatenSpeicher) obj2.readObject();
+
+            benutzername = datenSpeicher.benutzername;
+            passwort = datenSpeicher.passwort;
+
+            System.out.println(benutzername);
+
+            for (int i = 0; i<10; i++){
+                spiel[i] = datenSpeicher.spiel[i];
+                System.out.println(datenSpeicher.spiel[i].name);
+            }
+
+            
+
+            obj2.close();
+
+        } catch (IOException d) {
+
+            d.printStackTrace();
+
+        } catch (ClassNotFoundException d2) {
+
+            d2.printStackTrace();
+
+        }
+    }
+
 }
 

@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.io.Serializable;
 import java.util.Random;
-public class Read {
+public class Read implements Serializable{
 private static Scanner sc = new Scanner(System.in);
 private static Random r = new Random();
 
@@ -95,11 +96,11 @@ private static Random r = new Random();
     public static void exit(){
         System.out.println("Credits:");
         System.out.println("Gruppenleiter: Attakan Karaustaoglu");
-        System.out.println("Wehr oder weniger Co-Gruppenleiter/Programmier Dierektor: Jost Trappmann");
+        System.out.println("Wehr oder weniger Co-Gruppenleiter/Programmier Dierektor: Max Sautmann mit hilfe von Marvin");
         System.out.println("Quellcode: Jost Trappmann");
         System.out.println("Pflichtenheft: Attakan Karaustaoglu, Jost Trappmann, Marvin Ruwe, Max Sautmann");
-        System.out.println("Datenspeicherung: Attakan Karaustaoglu");
-        System.out.println("Minispiel Tic Tac Toe");
+        System.out.println("Datenspeicherung: Max Sautmann");
+        System.out.println("Minispiel Tic Tac Toe ");
         System.exit(1);
     }
     public static int random(int min, int max ){

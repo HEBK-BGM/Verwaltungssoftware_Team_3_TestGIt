@@ -1,6 +1,6 @@
+import java.io.Serializable;
 
-
-public class MenueFuehrung {
+public class MenueFuehrung implements Serializable {
     private int b = 1;
 
     
@@ -55,6 +55,8 @@ public class MenueFuehrung {
         System.out.println(" (3) Spiele Verwalten");
         System.out.println(" (4) Tic Tac Toe spielen");
         System.out.println(" (5) Abmelden");
+        System.out.println(" (6) Daten speichern");
+        System.out.println(" (7) Daten laden");
                
         return Read.numberOSchleife();
     } 
@@ -66,12 +68,16 @@ public class MenueFuehrung {
             switch(start()){
                 case 1: pBenutzer.spielfestlegen();
                         break;
-                case 2: pBenutzer.spieleUswAusgeben();
+                case 2: pBenutzer.spieleUswAusgeben(); 
                         break;
-                case 3: pBenutzer.spielemenue();break;
+                case 3: pBenutzer.spielemenue(); break;
                 case 4: pBenutzer.menue(); break;
-                case 5: pBenutzer.setangemeldet(false);//beendet die Schleife
+                case 5: pBenutzer.setangemeldet(false);  ;//beendet die Schleife
                         break;
+                case 6: pBenutzer.saveData();
+                case 7: pBenutzer.loadData();
+                        break;
+
                         //Wenn man abgemeldet ist
                 default: System.out.println("Wiederhole deine Eingabe");
             }   
