@@ -19,12 +19,17 @@ public class Benutzer extends Person {
     public Fieldcommands fieldcommands = new Fieldcommands();
     public Spiel[] spiel = new Spiel[10];
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
+
+
+    
     public Benutzer(String pNutzername, int pAlter, String pPasswort){
         super(pAlter);
         passwort=pPasswort;
         benutzername=pNutzername;
     }
-
+    public void initialisieren(){
+    
+    }
     //getter und setter
     public void setangemeldet(boolean pangemeldet){
         angemeldet= pangemeldet;
@@ -98,7 +103,7 @@ public class Benutzer extends Person {
     
     public Spiel spielanlegen(){
         
-        löschenAllesNull();
+
         System.out.println("Bitte gib den Namen des Spiels ein");
         String pName= Read.string();
 
@@ -110,7 +115,7 @@ public class Benutzer extends Person {
     private void counterRegulierung() {
        for(int i=0; i>10; i++){
            counter=0;
-           if(spiel[i].name!=null){
+           if(spiel[i]!=null){
              counter++;
            }
 
@@ -212,7 +217,7 @@ public class Benutzer extends Person {
     public void spieleUswAusgeben(){
         counterRegulierung();
         for (int i = 0; i < counter; i++){
-            if(spiel[i].name==null){
+            if(spiel[i]==null){
 
             }else{ 
             Read.line();
@@ -263,6 +268,7 @@ public class Benutzer extends Person {
                 datenSpeicher.spiel[i].spielstundengelegt = spiel[i].spielstundengelegt;
 
                 datenSpeicher.spiel[i].abzeichen = spiel[i].abzeichen;        
+                
 
                 datenSpeicher.spiel[i].kaufjahrvorhanden = spiel[i].kaufjahrvorhanden;  
 
