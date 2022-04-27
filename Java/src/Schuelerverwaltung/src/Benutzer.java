@@ -103,7 +103,7 @@ public class Benutzer extends Person {
     
     public Spiel spielanlegen(){
         
-
+        
         System.out.println("Bitte gib den Namen des Spiels ein");
         String pName= Read.string();
 
@@ -124,18 +124,25 @@ public class Benutzer extends Person {
 
 
     public void spielfestlegen(){
+        counterRegulierung();
+        if(spiel[counter]==null){ 
         spiel[counter] = spielanlegen();
         Read.line();
         spiel[counter].setkaufjahr();
         Read.line();
         spiel[counter].setspiezeit();
-        counter++;
+        counterRegulierung();
+        }
+        else{
+            System.out.println("Alle Plätze sind belegt");
+        }
         
     }
     public void spieleanzeigen(){
-        counterRegulierung();
+        
         System.out.println("Bitte wähle ein Spiel aus");
-        for (int i = 0; i < counter; i++){
+        for (int i = 0; i < spiel.length; i++){
+            if(spiel[i]!=null)
             System.out.println(spiel[i].getname()+ " ("+i+")");
         }
     }
@@ -159,13 +166,15 @@ public class Benutzer extends Person {
         return Read.numberOSchleife();
     }
     public void spielemenue(){
+        counterRegulierung();
         int b = 0;
 
         if(counter!=0){
             while(b==0){
                 int a = 0;
+                
             int spielnumber= menueanzeigen();
-            if (spielnumber<counter){
+            if(spiel[spielnumber]!=null)
                 while(a==0){
                 System.out.println(spiel[spielnumber].getname());
                 switch(spielemenueanzeigen(spielnumber)){
@@ -179,7 +188,7 @@ public class Benutzer extends Person {
                     case 8: a=1; b=1; break;
                     default: System.out.println("Bitte wähle eine der oben stehende Optionen aus");
                 }
-            }
+            
             }
             else{
                 if(spielnumber==counter){
