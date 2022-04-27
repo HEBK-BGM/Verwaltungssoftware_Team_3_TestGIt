@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class MenueFuehrung implements Serializable {
+
+public class MenueFuehrung{
     private int b = 1;
 
     
@@ -75,7 +75,7 @@ public class MenueFuehrung implements Serializable {
                 case 5: pBenutzer.setangemeldet(false);  ;//beendet die Schleife
                         break;
                 case 6: pBenutzer.saveData();
-                case 7: pBenutzer.loadData();
+                case 7: pBenutzer.loadData(); 
                         break;
 
                         //Wenn man abgemeldet ist

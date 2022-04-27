@@ -19,5 +19,6 @@ public class DatenSpeicher implements Serializable{
         spiel[9] = new Spiel(null);
 
     }
+    
 }
 

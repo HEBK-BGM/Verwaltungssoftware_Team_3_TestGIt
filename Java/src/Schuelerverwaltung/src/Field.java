@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Field implements Serializable{
+
+public class Field{
     private String[] field = new String[10];
     private String x = "X";
     private String o = "O";

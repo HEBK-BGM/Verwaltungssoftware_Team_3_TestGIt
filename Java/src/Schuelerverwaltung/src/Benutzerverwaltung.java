@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Benutzerverwaltung implements Serializable {
+
+public class Benutzerverwaltung {
     private Benutzer benutzer;
     private MenueFuehrung menuefuehrung;
 

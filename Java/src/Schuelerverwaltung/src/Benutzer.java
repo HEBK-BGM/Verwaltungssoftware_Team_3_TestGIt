@@ -9,15 +9,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class Benutzer extends Person implements Serializable{
-    private String passwort;
-    private String benutzername;
+public class Benutzer extends Person {
+    public String passwort;
+    public String benutzername;
     DatenSpeicher datenSpeicher = new DatenSpeicher();
     //Ist dazu gut dass wir wissen ob er angemeldet sind
-    private boolean angemeldet = false;
-    private int counter= 0;
-    private Fieldcommands fieldcommands = new Fieldcommands();
-    private Spiel[] spiel = new Spiel[10];
+    public boolean angemeldet = false;
+    public int counter= 0;
+    public Fieldcommands fieldcommands = new Fieldcommands();
+    public Spiel[] spiel = new Spiel[10];
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
     public Benutzer(String pNutzername, int pAlter, String pPasswort){
         super(pAlter);
@@ -95,13 +95,26 @@ public class Benutzer extends Person implements Serializable{
         return angemeldet;
     }
     //Wir legen auch ein Spiel in Benutzer an
+    
     public Spiel spielanlegen(){
+        
+        löschenAllesNull();
         System.out.println("Bitte gib den Namen des Spiels ein");
         String pName= Read.string();
 
         Spiel pSpiel = new Spiel(pName);
+        counterRegulierung();
         return pSpiel;
+    }
+    
+    private void counterRegulierung() {
+       for(int i=0; i>10; i++){
+           counter=0;
+           if(spiel[i].name!=null){
+             counter++;
+           }
 
+       }       
     }
 
 
@@ -115,6 +128,7 @@ public class Benutzer extends Person implements Serializable{
         
     }
     public void spieleanzeigen(){
+        counterRegulierung();
         System.out.println("Bitte wähle ein Spiel aus");
         for (int i = 0; i < counter; i++){
             System.out.println(spiel[i].getname()+ " ("+i+")");
@@ -196,7 +210,11 @@ public class Benutzer extends Person implements Serializable{
         counter--;
     }
     public void spieleUswAusgeben(){
+        counterRegulierung();
         for (int i = 0; i < counter; i++){
+            if(spiel[i].name==null){
+
+            }else{ 
             Read.line();
             System.out.println(spiel[i].getname());
             if(spiel[i].getkaufjahrfestgelegt()==true){
@@ -206,6 +224,7 @@ public class Benutzer extends Person implements Serializable{
             spiel[i].errungenschaftenausgeben();
             spiel[i].bewertungausgeben();
             spiel[i].abzeichenausgeben();
+            }
         }
     }
     public void menue(){
@@ -217,6 +236,8 @@ public class Benutzer extends Person implements Serializable{
         for (int i = 0; i < 10; i++) {
 
             if (spiel[i] != null) {
+
+                 
 
                 datenSpeicher.spiel[i] = new Spiel("");
 
@@ -231,6 +252,7 @@ public class Benutzer extends Person implements Serializable{
                         datenSpeicher.spiel[i].errungenschaft[v] = spiel[i].errungenschaft[v];
                     }
                 }
+
 
                 datenSpeicher.spiel[i].bewertung = spiel[i].bewertung;
 
@@ -284,7 +306,7 @@ public class Benutzer extends Person implements Serializable{
 
     public void loadData(){
         try {
-
+         
             FileInputStream f2 = new FileInputStream("ver.dat");
 
             BufferedInputStream b2 = new BufferedInputStream(f2);
@@ -296,14 +318,18 @@ public class Benutzer extends Person implements Serializable{
             benutzername = datenSpeicher.benutzername;
             passwort = datenSpeicher.passwort;
 
-            System.out.println(benutzername);
-
+            System.out.println("Benutzer "+benutzername);
+            
             for (int i = 0; i<10; i++){
-                spiel[i] = datenSpeicher.spiel[i];
-                System.out.println(datenSpeicher.spiel[i].name);
+                if(datenSpeicher.spiel[i]!=null)
+                spiel[i] = new Spiel("");
+                spiel[i] = datenSpeicher.spiel[i]; 
+                counter=i;
+                System.out.println("Spiel : "+spiel[i]);
             }
 
             
+          
 
             obj2.close();
 
@@ -316,7 +342,14 @@ public class Benutzer extends Person implements Serializable{
             d2.printStackTrace();
 
         }
-    }
 
+    }
+    private void löschenAllesNull() {
+        for (int i=0;i<10;i++ )
+        if(spiel[i]==null)
+
+        spieleloeschen(i);
+        counterRegulierung();
+    }
 }
 

@@ -1,7 +1,7 @@
 import java.util.Scanner;
-import java.io.Serializable;
+
 import java.util.Random;
-public class Read implements Serializable{
+public class Read {
 private static Scanner sc = new Scanner(System.in);
 private static Random r = new Random();
 

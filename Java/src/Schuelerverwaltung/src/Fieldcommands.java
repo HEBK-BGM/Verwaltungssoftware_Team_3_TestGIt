@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Fieldcommands implements Serializable {
+
+public class Fieldcommands {
     private Field[] field = new Field[20];
     private int counter = 0;
     private int siegeO;
