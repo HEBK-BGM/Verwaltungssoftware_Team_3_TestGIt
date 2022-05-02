@@ -118,8 +118,9 @@ public class Benutzer extends Person {
     }
     
     private void counterRegulierung() {
-       for(int i=0; i>spiel.length; i++){
-           counter=0;
+        counter=0;
+        for(int i=0; i>spiel.length; i++){
+          
            if(spiel[i]!=null){
              counter++;
              
@@ -157,6 +158,7 @@ public class Benutzer extends Person {
     }
     public int menueanzeigen(){
         spieleanzeigen();
+
         System.out.println("Welches Spiel wählst du?");
         int gamenumber = Read.numberOSchleife();
       return gamenumber;
