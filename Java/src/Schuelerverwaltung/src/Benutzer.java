@@ -15,6 +15,7 @@ public class Benutzer extends Person {
     public int counter= 0;
     public Fieldcommands fieldcommands = new Fieldcommands();
     public Spiel[] spiel = new Spiel[10];
+    public boolean spielvorhanden;
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
 
 
@@ -26,6 +27,13 @@ public class Benutzer extends Person {
     }
     public void initialisieren(){
     
+    }
+    public Benutzer erstelleNutzer(Benutzer pBenutzer){
+        datenSpeicher.benutzername= pBenutzer.benutzername;
+        datenSpeicher.passwort=pBenutzer.passwort;
+        datenSpeicher.spiel=pBenutzer.spiel;
+
+        return pBenutzer;
     }
     //getter und setter
     public void setangemeldet(boolean pangemeldet){
@@ -110,13 +118,16 @@ public class Benutzer extends Person {
     }
     
     private void counterRegulierung() {
-       for(int i=0; i>10; i++){
+       for(int i=0; i>spiel.length; i++){
            counter=0;
            if(spiel[i]!=null){
              counter++;
+             
            }
+        
 
-       }       
+       }
+           
     }
 
 
@@ -128,6 +139,7 @@ public class Benutzer extends Person {
         spiel[counter].setkaufjahr();
         Read.line();
         spiel[counter].setspiezeit();
+        spielvorhanden=true;
         counterRegulierung();
         }
         else{
@@ -145,7 +157,6 @@ public class Benutzer extends Person {
     }
     public int menueanzeigen(){
         spieleanzeigen();
-        System.out.println("Zurück ("+counter+")");
         System.out.println("Welches Spiel wählst du?");
         int gamenumber = Read.numberOSchleife();
       return gamenumber;
@@ -166,7 +177,7 @@ public class Benutzer extends Person {
         counterRegulierung();
         int b = 0;
 
-        if(counter!=0){
+        if(spielvorhanden==true){
             while(b==0){
                 int a = 0;
                 
@@ -222,7 +233,7 @@ public class Benutzer extends Person {
     }
     public void spieleUswAusgeben(){
         counterRegulierung();
-        for (int i = 0; i < counter; i++){
+        for (int i = 0; i < spiel.length; i++){
             if(spiel[i]==null){
 
             }else{ 
@@ -338,6 +349,7 @@ public class Benutzer extends Person {
                 spiel[i] = datenSpeicher.spiel[i]; 
                 counter=i;
                 System.out.println("Spiel : "+spiel[i]);
+                spielvorhanden=true;
             }
 
             

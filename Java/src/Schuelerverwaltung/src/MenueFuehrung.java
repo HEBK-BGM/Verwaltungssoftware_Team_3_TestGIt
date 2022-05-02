@@ -98,7 +98,8 @@ public class MenueFuehrung{
         while(pBenutzer.getAngemeldet() == false){
             Read.line();
             switch (anmeldenOderRegestrieren()){
-                case 1: pBenutzer.anmeldung(); break;
+
+                case 1: if(pBenutzer!=null){pBenutzer.anmeldung();} break;
                 case 2: datenueberschreiben(pBenutzer); break; //hier kann nicht regestriere ausgeführt werden da wir nur die Werte verändern wollen und den Benutzer nicht überschreiben wollen bei regestriere() würden auch die Spiele
                 case 3: Read.exit(); break;
                 default: System.out.println("Bitte eingabe wiederholen");
@@ -113,6 +114,7 @@ public class MenueFuehrung{
         pBenutzer.setAlter(Read.noString("Bitte versuch es erneut, gib dein Alter ein"));
         
     }
+
 }
   
 

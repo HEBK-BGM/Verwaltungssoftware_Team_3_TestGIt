@@ -1,6 +1,6 @@
+import java.io.Serializable;
 
-
-public class Bewertung{
+public class Bewertung implements Serializable{
     private int bewertung;
     private String bewertungstext;
     public Bewertung(int pBewertung, String pBewertungstext){

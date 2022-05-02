@@ -1,7 +1,7 @@
-
+import java.io.Serializable;
 
 //Sinn der Klasse ist klar es muss nur geschaut werden wie wir das machen wird noch nicht gebraucht wirklich
-public class Errungenschaft {
+public class Errungenschaft implements Serializable {
     private String name;
     private int jahr;
     private boolean jahrfestglegt = false;
