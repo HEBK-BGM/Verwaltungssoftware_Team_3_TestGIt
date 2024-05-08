@@ -16,6 +16,7 @@ public class Benutzer extends Person {
     public Fieldcommands fieldcommands = new Fieldcommands();
     public Spiel[] spiel = new Spiel[10];
     public boolean spielvorhanden;
+    public int test;
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
 
 
