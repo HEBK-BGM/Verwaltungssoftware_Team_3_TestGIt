@@ -17,6 +17,7 @@ public class Benutzer extends Person {
     public Spiel[] spiel = new Spiel[10];
     public boolean spielvorhanden;
     public int test;
+    public int test2;
     // Wir erstellen die Spiele für Benutzer damit wir das dem Benutzer zu ordnen    
 
 
